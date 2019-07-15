@@ -1,0 +1,279 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+/* line 5, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');*/
+/* line 14, ../sass/screen.scss */
+#SuperWrapper {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  /*font-family: arial, Helvetica, sans-serif;*/
+  /*font-family: Tahoma, Geneva, sans-serif;*/
+  /*font-family: Verdana, Geneva, sans-serif;*/
+  /*font-family: 'Roboto', sans-serif;*/
+  /*font-family: 'Open Sans Condensed', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #192118;
+}
+/* line 28, ../sass/screen.scss */
+#SuperWrapper p {
+  margin: 0px;
+  padding: 0px 0px 15px 0px;
+  line-height: 20px;
+}
+/* line 33, ../sass/screen.scss */
+#SuperWrapper h1 {
+  /*padding: 5px 0px 15px 0px;*/
+  margin-top: -15px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  /*letter-spacing: -1px;*/
+  color: #495937;
+}
+/* line 43, ../sass/screen.scss */
+#SuperWrapper a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #003366;
+}
+/* line 47, ../sass/screen.scss */
+#SuperWrapper a :hover {
+  text-decoration: none;
+}
+
+/* line 52, ../sass/screen.scss */
+#SuperHeader {
+  width: 1000px;
+  height: 400px;
+  background-image: url("img/title.jpg");
+  background-size: cover;
+}
+
+/* line 58, ../sass/screen.scss */
+#SuperHeaderLogo {
+  padding: 25px 0px 83px 80px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 48px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  margin: 0px;
+  /*color: #404d3a;*/
+  color: rgba(8, 13, 8, 0.85);
+}
+
+/* line 69, ../sass/screen.scss */
+#SuperHeaderMenu {
+  margin: 0px;
+}
+/* line 71, ../sass/screen.scss */
+#SuperHeaderMenu ul.navi {
+  padding: 0px;
+  margin: 0px 0px 0px 0px;
+  width: 1000px;
+  text-align: center;
+  position: relative;
+}
+/* line 77, ../sass/screen.scss */
+#SuperHeaderMenu ul.navi li {
+  height: 22px;
+  padding: 0 10px 0 10px;
+  margin: 0px;
+  display: inline;
+}
+/* line 82, ../sass/screen.scss */
+#SuperHeaderMenu ul.navi li a {
+  padding: 0px 8px 0px 8px;
+  font: 18px arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-indent: 0px;
+  font-weight: bold;
+  margin: 0;
+  width: inherit;
+  letter-spacing: -1px;
+  line-height: 30px;
+}
+/* line 93, ../sass/screen.scss */
+#SuperHeaderMenu ul.navi li a :hover {
+  color: #FFCC00;
+}
+
+/* line 100, ../sass/screen.scss */
+#SuperContentsWrapper {
+  width: 1000px;
+  /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/Contents.jpg');*/
+  background-color: #9cb893;
+}
+
+/* line 105, ../sass/screen.scss */
+#SuperContents {
+  width: 1000px;
+  /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/ContentsTop.jpg');*/
+  background-repeat: no-repeat;
+  background-color: #9cb893;
+}
+
+/* line 111, ../sass/screen.scss */
+.SuperContentsSub {
+  padding: 30px 40px 0px 40px;
+  /*background-color: $mainBackColor;*/
+}
+
+/* line 115, ../sass/screen.scss */
+#SuperBoxContents {
+  padding: 0px 80px 0px 80px;
+  margin: 0px;
+}
+
+/* line 119, ../sass/screen.scss */
+#SuperBoxContents p {
+  padding: 0px 0px 10px 0px;
+  margin: 0px;
+  line-height: 20px;
+}
+
+/* line 124, ../sass/screen.scss */
+#SuperBoxContents ul {
+  padding: 0px 0px 0px 28px;
+  margin: 0px;
+  list-style-type: disc;
+}
+
+/* line 129, ../sass/screen.scss */
+#SuperBoxContents li {
+  line-height: 20px;
+}
+
+/* line 133, ../sass/screen.scss */
+.PaymentShippingEtc {
+  width: 1000px;
+}
+
+/* line 136, ../sass/screen.scss */
+.PaymentShippingEtcTop {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 83px;
+  background-image: url("https://c.radikal.ru/c07/1907/27/a8ca8e6b5794.png");
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0px;
+  color: #a1c191;
+}
+
+/* line 149, ../sass/screen.scss */
+.PaymentShippingEtcContents {
+  width: 1000px;
+  background-color: #9cb893;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* line 155, ../sass/screen.scss */
+.PaymentShippingEtcBottom {
+  width: 1000px;
+  height: 53px;
+  background-color: #9cb893;
+}
+
+/* HTML5 ELEMENTS */
+/* sub images > thumbnail list */
+/* line 163, ../sass/screen.scss */
+ul#SuperThumbs, ul#SuperThumbs li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 168, ../sass/screen.scss */
+ul#SuperThumbs li {
+  float: left;
+  box-sizing: border-box;
+  padding: 3px;
+  width: 50%;
+  height: 560px;
+}
+/* line 174, ../sass/screen.scss */
+ul#SuperThumbs li div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

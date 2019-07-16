@@ -1,105 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Elya Boz-Ali Store</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
-<!--    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
-<!--    <script src="js/bootstrap.js" defer></script>-->
-<!--    <script src="js/my_script.js" defer></script>-->
-<!--    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-<!--    <link rel="stylesheet" href="css/bootstrap.css">-->
-    <link rel="stylesheet" href="stylesheets/screen.css">
+    <meta charset="utf-8" />
+    <title>Webpack в React</title>
 </head>
 <body>
-<div id="SuperWrapper">
-
-    <div id="SuperHeader">
-        <div id="SuperHeaderLogo">Elya Boz-Ali Store</div>
-        <!--        <div id="SuperHeaderMenu">-->
-
-        <!--            <ul class="navi">-->
-        <!--                <li><a href="http://search.ebay.com/_W0QQsassZUSERNAMEQQhtZ-1">Other Items</a></li>-->
-        <!--                <li><a href="http://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback&iid=330478824623&userid=USERNAME&ssPageName=VIP:feedback&ftab=FeedbackAsSeller">Feedbacks</a></li>-->
-        <!--                <li><a href="http://members.ebay.com/ws/eBayISAPI.dll?ViewUserPage&userid=USERNAME">About Us</a></li>-->
-        <!--                <li><a href="http://contact.ebay.com/ws/eBayISAPI.dll?ReturnUserEmail&redirect=0&requested=USERNAME">Contact Us</a></li>-->
-        <!--                <li><a href="http://my.ebay.com/ws/eBayISAPI.dll?AcceptSavedSeller&ru=http%3A//cgi.ebay.com/ws/eBayISAPI.dll?ViewItemNext&item=330478824623&mode=0&ssPageName=STRK:MEFS:ADDVI&sellerid=USERNAME&preference=0">Add To Favorites</a></li>-->
-        <!--            </ul>-->
-
-        <!--        </div>-->
-    </div>
-    <div id="SuperContentsWrapper">
-        <div id="SuperContents" style="/*margin-top: -50px;*/">
-            <div class="SuperContentsSub" style="position: absolute; margin-top: -200px; width: 800px; box-sizing: border-box;">
-                <h1>Welcome to my store!</h1>
-                <p>
-                    <br>
-                    Hi :) I'm Elya! And I make a decorations by myself hand with love &#10084;<br>
-                    This pendant is 100% handmade.<br>
-                    <br>
-                    Materials:<br>
-                    <!--                    <ul>-->
-                    <!--                        <li>&#8226; Czech beads of first grade</li>-->
-                    <!--                        <li>&#8226; Wood</li>-->
-                    <!--                    </ul>-->
-                    &nbsp; &nbsp; &#8226; Czech beads of first grade<br>
-                    &nbsp; &nbsp; &#8226; Wood<br>
-                    <br>
-                </p>
-            </div>
-            <div class="SuperContentsSub">
-                <p>
-                    Size of the pedant ~ 14x9,5 cm<br>
-                    Lenght of the rope 50 cm + the additional rope 12 cm<br>
-                    Color: multicolor(turquoise, blue, white, brown, golden, wooden)<br>
-                    I don't know how much weight, but it is heavy enought(~80gr)
-                </p>
-                <p style="/*text-align: center;*/ font-size: 20px;">
-                    Design of these decorations were create by me and haven't analogs.<br>
-                    The each decoration is unique and haven't a copy.
-                </p>
-                <h1>Images Gallery</h1>
-                <!--                <p>Here, you can have unlimited product images, please refer to-->
-                <!--                    the instruction manual available in the member area for instructions-->
-                <!--                    on how to add or remove product images.</p>-->
-                <p></p>
-                <ul id="SuperThumbs">
-                    <!-- Place your first set of thumbnails here -->
-                    <li><div href="#" style="background-image: url('https://d.radikal.ru/d39/1907/8c/90bce2acb19f.jpg');"/></li>
-                    <li><div href="#" style="background-image: url('https://a.radikal.ru/a33/1907/de/4c138f6f6bad.jpg');"/></li>
-                    <li style="width: 100%; height: 780px"><div href="#" style="background-image: url('https://c.radikal.ru/c33/1907/df/d152127e536a.jpg');"/></li>
-                    <li style="width: 100%; height: 530px"><div href="#" style="background-image: url('https://d.radikal.ru/d02/1907/3b/d07406a61543.jpg');"/></li>
-                    <!--li><div href="#" style="background-image: url('img_x0.5/img_14.webp');"/></li>
-                    <li><div href="#" style="background-image: url('img_x0.5/img_15.webp');"/></li>
-                    <li><div href="#" style="background-image: url('img_x0.5/img_16.webp');"/></li>
-                    <li><div href="#" style="background-image: url('img_x0.5/img_17.webp');"/></li-->
-                </ul>
-                <p>&nbsp;</p>
-            </div>
-            <div class="PaymentShippingEtc">
-                <div class="PaymentShippingEtcTop">PAYMENT</div>
-                <div class="PaymentShippingEtcContents">
-                    <div class="SuperBoxContents">
-                        I accept <i>PayPal</i> only
-                    </div>
-                </div>
-                <div class="PaymentShippingEtcBottom"></div>
-            </div>
-
-            <div class="PaymentShippingEtc">
-                <div class="PaymentShippingEtcTop">SHIPPING</div>
-                <div class="PaymentShippingEtcContents">
-                    <div class="SuperBoxContents">
-                        Delivery is FREE to anywhere in the world
-                    </div>
-                </div>
-                <div class="PaymentShippingEtcBottom"></div>
-            </div>
-        </div>
-    </div>
-</div>
+<div id="app"></div>
+<script src="public/bundle.js"></script>
 </body>
-
 </html>

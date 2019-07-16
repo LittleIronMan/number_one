@@ -3,180 +3,184 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
+//@import "compass/reset";
 
-$mainBackColor: #9cb893;
-$mainWidth: 1000px;
+$mainBackColor: #16311e;
+$mainWidth: 800px;
 
 /*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/
 /*@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-#SuperWrapper {
-  width: $mainWidth;
-  margin-left: auto;
-  margin-right: auto;
-  /*font-family: arial, Helvetica, sans-serif;*/
-  /*font-family: Tahoma, Geneva, sans-serif;*/
-  /*font-family: Verdana, Geneva, sans-serif;*/
-  /*font-family: 'Roboto', sans-serif;*/
-  /*font-family: 'Open Sans Condensed', sans-serif;*/
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  color: #192118;
-
-  p {
-    margin: 0px;
-    padding: 0px 0px 15px 0px;
-    line-height: 20px;
-  }
-  h1 {
-    /*padding: 5px 0px 15px 0px;*/
-    margin-top: -15px;
-    margin-bottom: 0px;
-    font-size: 40px;
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+.Super {
+  &Wrapper {
+    width: $mainWidth;
+    margin-left: auto;
+    margin-right: auto;
+    /*font-family: arial, Helvetica, sans-serif;*/
+    /*font-family: Tahoma, Geneva, sans-serif;*/
+    /*font-family: Verdana, Geneva, sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     font-weight: bold;
-    text-align: center;
-    /*letter-spacing: -1px;*/
-    color: #495937;
-  }
-  a {
-    font-weight: bold;
-    text-decoration: underline;
-    color: #003366;
-    :hover {
-      text-decoration:none;
+    color: #9cb893;
+    p {
+      margin: 0px;
+      padding: 0px 0px 15px 0px;
+      line-height: 20px;
+    }
+    h1 {
+      /*padding: 5px 0px 15px 0px;*/
+      font-family: 'Libre Baskerville', serif;
+      //margin-top: 10px;
+      margin-bottom: 0px;
+      font-size: 35px;
+      font-weight: normal;
+      //font-weight: bold;
+      text-align: center;
+      /*letter-spacing: -1px;*/
+      //color: #495937;
+    }
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #003366;
+      :hover {
+        text-decoration:none;
+      }
     }
   }
-}
-#SuperHeader {
-  width:$mainWidth;
-  height: 400px;
-  background-image:url("img/title.jpg");
-  background-size: cover;
-}
-#SuperHeaderLogo {
-  padding: 25px 0px 83px 80px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 48px;
-  letter-spacing: -1px;
-  font-weight: bold;
-  margin: 0px;
-  /*color: #404d3a;*/
-  color: rgba(8, 13, 8, 0.85)
-  /*text-shadow: 1px 1px 1px #000;*/
-}
-#SuperHeaderMenu {
-  margin: 0px;
-  ul.navi{
-    padding: 0px;
-    margin: 0px 0px 0px 0px;
-    width: $mainWidth;
-    text-align: center;
-    position: relative;
-    li{
-      height: 22px;
-      padding: 0 10px 0 10px;
+  &Header {
+    width:$mainWidth;
+    height: 400px;
+    background-image:url("../img/title.jpg");
+    background-size: cover;
+    &Logo {
+      padding: 25px 0px 83px 80px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 48px;
+      letter-spacing: -1px;
+      font-weight: bold;
       margin: 0px;
-      display: inline;
-      a{
-        padding: 0px 8px 0px 8px;
-        font: 18px arial, Helvetica, sans-serif;
-        color: #FFFFFF;
-        text-decoration: none;
-        text-indent: 0px;
-        font-weight: bold;
-        margin: 0;
-        width: inherit;
-        letter-spacing: -1px;
-        line-height: 30px;
-        :hover{
-          color: #FFCC00;
+      /*color: #404d3a;*/
+      color: rgba(8, 13, 8, 0.85)
+      /*text-shadow: 1px 1px 1px #000;*/
+    }
+    &Menu {
+      margin: 0px;
+      ul.navi{
+        padding: 0px;
+        margin: 0px 0px 0px 0px;
+        width: $mainWidth;
+        text-align: center;
+        position: relative;
+        li{
+          height: 22px;
+          padding: 0 10px 0 10px;
+          margin: 0px;
+          display: inline;
+          a{
+            padding: 0px 8px 0px 8px;
+            font: 18px arial, Helvetica, sans-serif;
+            color: #FFFFFF;
+            text-decoration: none;
+            text-indent: 0px;
+            font-weight: bold;
+            margin: 0;
+            width: inherit;
+            letter-spacing: -1px;
+            line-height: 30px;
+            :hover{
+              color: #FFCC00;
+            }
+          }
         }
       }
     }
   }
-}
-#SuperContentsWrapper {
-  width: $mainWidth;
-  /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/Contents.jpg');*/
-  background-color: $mainBackColor;
-}
-#SuperContents {
-  width: $mainWidth;
-  /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/ContentsTop.jpg');*/
-  background-repeat: no-repeat;
-  background-color: $mainBackColor;
-}
-.SuperContentsSub {
-  padding: 30px 40px 0px 40px;
-  /*background-color: $mainBackColor;*/
-}
-#SuperBoxContents {
-  padding: 0px 80px 0px 80px;
-  margin: 0px;
-}
-#SuperBoxContents p {
-  padding: 0px 0px 10px 0px;
-  margin: 0px;
-  line-height: 20px;
-}
-#SuperBoxContents ul {
-  padding: 0px 0px 0px 28px;
-  margin: 0px;
-  list-style-type: disc;
-}
-#SuperBoxContents li {
-  line-height: 20px;
-}
-
-.PaymentShippingEtc {
-  width: $mainWidth;
-}
-.PaymentShippingEtcTop {
-  box-sizing: border-box;
-  width: $mainWidth;
-  height: 83px;
-  background-image:url('https://c.radikal.ru/c07/1907/27/a8ca8e6b5794.png');
-  font-family: 'Open Sans', sans-serif;
-  font-size: 40px;
-  letter-spacing: -1px;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 0px;
-  color: #a1c191;
-}
-.PaymentShippingEtcContents {
-  width: $mainWidth;
-  background-color: $mainBackColor;
-  font-size: 20px;
-  text-align: center;
-}
-.PaymentShippingEtcBottom {
-  width: $mainWidth;
-  height: 53px;
-  background-color: $mainBackColor;
-}
-
-/* HTML5 ELEMENTS */
-/* sub images > thumbnail list */
-ul#SuperThumbs, ul#SuperThumbs li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-ul#SuperThumbs li {
-  float: left;
-  box-sizing: border-box;
-  padding: 3px;
-  width: 50%;
-  height: 560px;
-  div {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-size: cover;
+  &Contents {
+    width: $mainWidth;
+    /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/ContentsTop.jpg');*/
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-color: $mainBackColor;
+    &Wrapper {
+      width: $mainWidth;
+      /*background-image: url('https://www.superauctiontemplate.com/freebaytemplate/productimages/GeneralShopping11/HTML/images/Contents.jpg');*/
+      background-color: $mainBackColor;
+    }
+    &Sub {
+      padding: 30px 40px 0px 40px;
+      /*background-color: $mainBackColor;*/
+      .WelcomeLabel {
+        margin-top: 60px;
+      }
+      ul {
+        &, & li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        li {
+          float: left;
+          box-sizing: border-box;
+          padding: 3px;
+          width: 50%;
+          height: 560px;
+          div {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+          }
+        }
+      }
+    }
+    &BoxContents {
+      padding: 0px 80px 0px 80px;
+      margin: 0px;
+      p {
+        padding: 0px 0px 10px 0px;
+        margin: 0px;
+        line-height: 20px;
+      }
+      ul {
+        padding: 0px 0px 0px 28px;
+        margin: 0px;
+        list-style-type: disc;
+      }
+      li {
+        line-height: 20px;
+      }
+    }
+  }
+  &PaymentShippingEtc {
+    &, &Top, &Contents, &Bottom {
+      width: $mainWidth;
+    }
+    &Top {
+      box-sizing: border-box;
+      height: 83px;
+      background-image:url('https://c.radikal.ru/c07/1907/27/a8ca8e6b5794.png');
+      font-family: 'Open Sans', sans-serif;
+      font-size: 40px;
+      letter-spacing: -1px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 0px;
+      color: #a1c191;
+    }
+    &Contents {
+      background-color: $mainBackColor;
+      font-size: 20px;
+      text-align: center;
+    }
+    &Bottom {
+      height: 53px;
+      background-color: $mainBackColor;
+    }
   }
 }

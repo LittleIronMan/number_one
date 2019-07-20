@@ -21,3 +21,8 @@
     запускаешь npm install
     создашь файл webpack.config.js, записываешь туда опции для сборки проекта
     запускешь npm run build (команда build должна быть прописана в package.json)
+
+------>>>> установка compass <<<<------
+устанавливаешь ruby
+выполняешь gem install compass
+затем path/to/compass compile path/to/project/sass/screen.scss

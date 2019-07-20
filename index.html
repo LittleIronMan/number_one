@@ -3,11 +3,47 @@
 <head>
     <meta charset="utf-8" />
     <title>Webpack в React</title>
+
+<!--    следующие строки убрать, если будет использоваться webpack-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
     <link rel="stylesheet" href="stylesheets/screen.css">
     <link rel="stylesheet" href="stylesheets/bootstrap-grid.css">
 </head>
 <body>
     <div id="app"></div>
-        <script src="public/bundle.js"></script>
+<!--    раскомментировать, если будет использоваться webpack-->
+<!--        <script src="public/bundle.js"></script>-->
+    
+<!--    если будет использоваться webpack - весь код ниже переместитиь в файл app.jsx-->
+        <script type="text/babel">
+            ReactDOM.render(
+                <div className="elya container-fluid">
+                    <nav>
+                        <button>logo</button>
+                        <button>main</button>
+                        <button>catalog</button>
+                        <button>about</button>
+                    </nav>
+                    <div className="row">
+                        <div className="title col-12">
+                            {/*Youtube video*/}
+                            <iframe width="420" height="315"
+                                    src="https://www.youtube.com/embed/i9OVmXQDZH0">
+                            </iframe>
+                        </div>
+                        <div className="info col-12">
+                            images Gallery
+                        </div>
+                        <div className="feedbacks col-12">
+                            Users feedbacks and comments
+                        </div>
+                    </div>
+                </div>,
+                document.getElementById("app")
+            )
+        </script>
     </body>
 </html>

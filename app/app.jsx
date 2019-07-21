@@ -14,28 +14,40 @@ const propsValues = {
     ]
 };
 
+class ElyaTitle extends React.Component {
+    render() {
+        return <div className="elyaVideoContainer">
+            {/*Youtube video*/}
+            <iframe
+                width="420"
+                height="315"
+                src="https://www.youtube.com/embed/cpSJF2FDP2A"
+                frameborder="0"
+                allowfullscreen
+                className="video">
+            </iframe>
+        </div>;
+    }
+}
+class ElyaCatalog extends React.Component {
+    render() {
+        return <div className="elyaCatalog">
+            images Gallery
+        </div>;
+    }
+}
+class ElyaFooter extends React.Component {
+    render() {
+        return <div className="elyaFooter">
+            Users feedbacks and comments
+        </div>;
+    }
+}
 ReactDOM.render(
-    <div className="elya container-fluid">
-        <nav>
-            <button>logo</button>
-            <button>main</button>
-            <button>catalog</button>
-            <button>about</button>
-        </nav>
-        <div className="row">
-            <div className="title col-12">
-                {/*Youtube video*/}
-                <iframe width="420" height="315"
-                        src="https://www.youtube.com/embed/i9OVmXQDZH0">
-                </iframe>
-            </div>
-            <div className="info col-12">
-                images Gallery
-            </div>
-            <div className="feedbacks col-12">
-                Users feedbacks and comments
-            </div>
-        </div>
+    <div className="elya">
+        <ElyaTitle/>
+        <ElyaCatalog/>
+        <ElyaFooter/>
     </div>,
     document.getElementById("app")
 )

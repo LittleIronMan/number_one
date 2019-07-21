@@ -1,44 +1,30 @@
 'use strict';
 var React = require('react');
-var {Motion, spring} = require('react-motion');
+var {Motion, StaggeredMotion, spring} = require('react-motion');
 
-const MENU_WIDTH = 200;
+const MENU_BUTTON_WIDTH = 60;
+const MENU_BUTTON_HEIGHT = 60;
+const MENU_ITEM_WIDTH = 200;
 const MENU_ITEM_HEIGHT = 60;
 // Жестко заданные значения позиции главной кнопки
-const M_X = 0;
-const M_Y = 0;
+const M_X = 5;
+const M_Y = 5;
 
-function initDeltaPosition(childIdx) {
+const HIDDEN = false;
+const VISIBLE = true;
+const TRIGGER_DISTANCE = 20;
+
+const SPRING_CONFIG = {stiffness: 400, damping: 28};
+
+function getItemStyle(pos, buttonIndex, animated=true) {
+    let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH -10 : 0);
+    let y = M_Y + MENU_BUTTON_HEIGHT + 10 + (MENU_ITEM_HEIGHT * buttonIndex);
     return {
-        dx: -MENU_WIDTH,
-        dy: MENU_ITEM_HEIGHT * (childIdx + 1),
-    }
-}
-
-function finalDeltaPosition(childIdx) {
-    return {
-        dx: 0,
-        dy: MENU_ITEM_HEIGHT * (childIdx + 1),
-    }
-}
-
-function getButtonStyle(dx, dy, animated=true) {
-    if (animated) {
-        return {
-            width: MENU_WIDTH,
-            height: MENU_ITEM_HEIGHT,
-            left: spring(M_X + dx),
-            top: spring(M_Y + dy)
-        };
-    }
-    else {
-        return {
-            width: MENU_WIDTH,
-            height: MENU_ITEM_HEIGHT,
-            left: M_X + dx,
-            top: M_Y + dy
-        };
-    }
+        //width: MENU_ITEM_WIDTH,
+        //height: MENU_ITEM_HEIGHT,
+        left: animated ? spring(x, SPRING_CONFIG) : x,
+        top: y
+    };
 }
 
 class ElyaMenu extends React.Component {
@@ -46,55 +32,96 @@ class ElyaMenu extends React.Component {
         super(props);
 
         this.state = {
-            isOpen: false
+            firstRender: true,
+            targetPos: HIDDEN
         };
 
         // Привязываем this к функции
-        this.openMenu = this.openMenu.bind(this);
-    }
-
-    initialChildButtonStyles(childIdx) {
-        let {dx, dy} = initDeltaPosition(childIdx);
-        return getButtonStyle(dx, dy);
-    }
-
-    finalChildButtonStyles(childIndex) {
-        let{dx, dy} = finalDeltaPosition(childIndex);
-        return getButtonStyle(dx, dy);
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
 
     mainButtonStyle() {
-        return getButtonStyle(0, 0, false);
+        return {
+            width: MENU_BUTTON_WIDTH,
+            height: MENU_BUTTON_HEIGHT,
+            left: M_X,
+            top: M_Y
+        };
     }
 
-    openMenu() {
-        console.log("Open Menu Button!");
-        let{isOpen} = this.state;
+    toggleMenu() {
+        console.log("Toggle Menu Button!");
+        let{targetPos} = this.state;
         this.setState({
-            isOpen: !isOpen
+            firstRender: false,
+            targetPos: !targetPos
         });
     }
 
+    renderItems() {
+        const {targetPos, firstRender} = this.state;
+        let currentPos = firstRender ? HIDDEN : (!targetPos);
+        let newPos = firstRender ? HIDDEN : targetPos;
+        // Определяем целевые стили для кнопок. Эти стили не анимированные, а фиксированные.
+        // Т.е. если меню открыто, то целевым стилем для них будет скрытая позиция за пределами экрана.
+        // И наоборот, если меню скрыто, то целевым стилем для них будет видимая позиция в верхней-правой части экрана.
+        const itemsTargetStyles = this.props.items.map((item, i) => {
+            return getItemStyle(currentPos, i, false);
+        });
+
+        // Здесь определяем анимированные целевые стили для кнопок.
+        // По-сути это те-же стили, только в них изменяемые величины обернуты в функцию spring()
+        const itemsTargetStylesSpring = this.props.items.map((item, i) => {
+            return getItemStyle(newPos, i, true);
+        });
+
+        const mostLeftPos = getItemStyle(HIDDEN, 0, false).left;
+        const mostRightPos = getItemStyle(VISIBLE, 0, false).left;
+
+        let calculateStylesForNextFrame = prevFrameItemsStyles => {
+            let nextFrameTargetStyles = prevFrameItemsStyles.map((itemStyleInPreviousFrame, i) => {
+                // движение для первой кнопки будет включаться сразу после изменения состояния
+                if (i === 0) {
+                    return itemsTargetStylesSpring[i];
+                }
+
+                // Каждая из остальных кнопок дожидается пока предыдущая кнопка
+                // преодолеет определенную дистанцию, чтобы начать свое движение.
+                const itemPrevPos = prevFrameItemsStyles[i - 1].left;
+                const shouldApplyTargetStyle = () => {
+                    return (newPos === HIDDEN) ?
+                        itemPrevPos <= mostRightPos - TRIGGER_DISTANCE:
+                        itemPrevPos >= mostLeftPos + TRIGGER_DISTANCE;
+                };
+
+                return shouldApplyTargetStyle() ? itemsTargetStylesSpring[i] : itemStyleInPreviousFrame;
+            });
+
+            return nextFrameTargetStyles;
+        };
+
+        return(
+            <StaggeredMotion defaultStyles={itemsTargetStyles} styles={calculateStylesForNextFrame}>
+                {interpolatedStyles =>
+                    <div>
+                        {interpolatedStyles.map(({width, height, top, left}, index) =>
+                            <div className="menu-item" key={index} style={{top, left}} >
+                                {this.props.items[index]}
+                            </div>
+                        )}
+                    </div>
+                }
+            </StaggeredMotion>
+        );
+    }
+
     render() {
-        let {isOpen} = this.state;
-        console.log("Render Menu! Current \"isOpen\" state == ", isOpen);
         return (
             <div className="elya-menu">
-                <div className="main-button" onClick={this.openMenu} style={this.mainButtonStyle()}>
+                <div className="menu-button" onClick={this.toggleMenu} style={this.mainButtonStyle()}>
                     <i className="fa fa-bars"/>
                 </div>
-                {this.props.items.map((item, index) => {
-                    let style = isOpen ? this.finalChildButtonStyles(index) : this.initialChildButtonStyles(index);
-                    return (
-                        <Motion style={style} key={index}>
-                            {({width, height, top, left}) =>
-                                <div className="child-button" style={{width, height, top, left}}>
-                                    {item}
-                                </div>
-                            }
-                        </Motion>
-                    );
-                })}
+                {this.renderItems()}
             </div>
         );
     }

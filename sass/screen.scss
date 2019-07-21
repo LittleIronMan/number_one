@@ -12,13 +12,37 @@
   font-size: 16px;
   background-color: #f5d85c;
   div.elya-menu {
-    font-size: 40px;
-    div.main-button, div.child-button {
+    $menuFontSize: 30px;
+    font-size: $menuFontSize;
+    color: #eeeeee;
+    div.menu-button, div.menu-item {
       position: absolute;
       z-index: 1;
-      width: 200px;
-      height: 60px;
-      background-color: #34d3ee;
+      background-color: rgba(#313131, 0.7);
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 2px;
+      border-color: #f5d85c;
+    }
+    div.menu-button {
+      //box-sizing: border-box;
+      //padding: auto;
+      // размер кнопки и её позиция захардкожены в модуле ElyaMenu.jsx
+      border-radius: 30px;
+      i {
+        margin-top: 14px;
+        margin-left: 14.5px;
+      }
+    }
+    div.menu-item {
+      $distPerItems: 60px;
+      $height: 50px;
+      height: $height;
+      line-height: $height;
+      $padding: ($height - $menuFontSize) / 2;
+      padding-left: $padding;
+      padding-right: $padding;
+      //width: 200px;
     }
   }
   &VideoContainer {

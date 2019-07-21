@@ -1,5 +1,6 @@
 'use strict';
 var React = require('react');
+var {Motion, spring} = require('react-motion');
 
 const MENU_WIDTH = 200;
 const MENU_ITEM_HEIGHT = 60;
@@ -21,19 +22,23 @@ function finalDeltaPosition(childIdx) {
     }
 }
 
-function getButtonStyle(dx, dy) {
-    // return {
-    //     width: `${MENU_WIDTH}`,
-    //     height: `${MENU_ITEM_HEIGHT}px`,
-    //     left: `${M_X + dx}px`,
-    //     top: `${M_Y + dy}px`
-    // };
-    return {
-        width: MENU_WIDTH,
-        height: MENU_ITEM_HEIGHT,
-        left: M_X + dx,
-        top: M_Y + dy
-    };
+function getButtonStyle(dx, dy, animated=true) {
+    if (animated) {
+        return {
+            width: MENU_WIDTH,
+            height: MENU_ITEM_HEIGHT,
+            left: spring(M_X + dx),
+            top: spring(M_Y + dy)
+        };
+    }
+    else {
+        return {
+            width: MENU_WIDTH,
+            height: MENU_ITEM_HEIGHT,
+            left: M_X + dx,
+            top: M_Y + dy
+        };
+    }
 }
 
 class ElyaMenu extends React.Component {
@@ -59,7 +64,7 @@ class ElyaMenu extends React.Component {
     }
 
     mainButtonStyle() {
-        return getButtonStyle(0, 0);
+        return getButtonStyle(0, 0, false);
     }
 
     openMenu() {
@@ -81,9 +86,13 @@ class ElyaMenu extends React.Component {
                 {this.props.items.map((item, index) => {
                     let style = isOpen ? this.finalChildButtonStyles(index) : this.initialChildButtonStyles(index);
                     return (
-                        <div key={index} className="child-button" style={style}>
-                            {item}
-                        </div>
+                        <Motion style={style} key={index}>
+                            {({width, height, top, left}) =>
+                                <div className="child-button" style={{width, height, top, left}}>
+                                    {item}
+                                </div>
+                            }
+                        </Motion>
                     );
                 })}
             </div>

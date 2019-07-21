@@ -12,7 +12,7 @@ const M_Y = 5;
 
 const HIDDEN = false;
 const VISIBLE = true;
-const TRIGGER_DISTANCE = 20;
+const TRIGGER_DISTANCE = 30;
 
 const SPRING_CONFIG = {stiffness: 400, damping: 28};
 
@@ -116,11 +116,25 @@ class ElyaMenu extends React.Component {
     }
 
     render() {
+        let {targetPos, firstRender} = this.state;
+        let mainButtonRotation;
+        if (firstRender) { mainButtonRotation = {rotate: 0}}
+        else {
+            mainButtonRotation =
+                targetPos === HIDDEN ?
+                    {rotate: spring(0, SPRING_CONFIG)} :
+                    {rotate: spring(-180, SPRING_CONFIG)};
+        }
         return (
             <div className="elya-menu">
-                <div className="menu-button" onClick={this.toggleMenu} style={this.mainButtonStyle()}>
-                    <i className="fa fa-bars"/>
-                </div>
+                <Motion style={mainButtonRotation}>
+                    {({rotate}) =>
+                        <div className="menu-button" onClick={this.toggleMenu}
+                             style={{...this.mainButtonStyle(), transform: `rotate(${rotate}deg)`}}>
+                            <i className="fa fa-bars"/>
+                        </div>
+                    }
+                </Motion>
                 {this.renderItems()}
             </div>
         );

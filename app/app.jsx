@@ -1,18 +1,16 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
-var ItemsList = require('./components/ItemsList.jsx');
+var ElyaMenu = require('./components/ElyaMenu.jsx');
 
-const propsValues = {
-    title: "Список смартфонов",
+const menuItems = {
     items: [
-        "HTC U Ultra",
-        "iPhone 7",
-        "Google Pixel",
-        "Huawei P9",
-        "Meizu Pro 6",
-        "Asus Zenfone 3"
+        "main",
+        "catalog",
+        "package",
+        "delivery",
+        "about"
     ]
-};
+}
 
 class ElyaTitle extends React.Component {
     render() {
@@ -45,6 +43,7 @@ class ElyaFooter extends React.Component {
 }
 ReactDOM.render(
     <div className="elya">
+        <ElyaMenu items={menuItems.items}/>
         <ElyaTitle/>
         <ElyaCatalog/>
         <ElyaFooter/>

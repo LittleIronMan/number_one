@@ -4,22 +4,142 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
-/* line 10, ../sass/screen.scss */
+/* line 5, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 11, ../sass/screen.scss */
 .elya {
   font-family: 'Open Sans', sans-serif;
-}
-/* line 12, ../sass/screen.scss */
-.elya .title {
-  background-color: #f5d85c;
-  height: 800px;
+  font-size: 16px;
+  background-color: #172f1c;
+  color: #c7e4cd;
 }
 /* line 16, ../sass/screen.scss */
-.elya .info {
-  background-color: #b5f571;
+.elya div.elya-menu {
+  font-size: 30px;
+}
+/* line 19, ../sass/screen.scss */
+.elya div.elya-menu div.menu-button, .elya div.elya-menu div.menu-item {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(49, 49, 49, 0.7);
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #f5d85c;
+}
+/* line 28, ../sass/screen.scss */
+.elya div.elya-menu div.menu-button {
+  border-radius: 30px;
+}
+/* line 33, ../sass/screen.scss */
+.elya div.elya-menu div.menu-button i {
+  margin-top: 13px;
+  margin-left: 15px;
+}
+/* line 38, ../sass/screen.scss */
+.elya div.elya-menu div.menu-item {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 49, ../sass/screen.scss */
+.elyaNavbar {
+  width: 100%;
+  height: 70px;
+}
+/* line 54, ../sass/screen.scss */
+.elyaVideo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+/* line 62, ../sass/screen.scss */
+.elyaVideo .youtube, .elyaVideo .stub-youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 69, ../sass/screen.scss */
+.elyaVideo .stub-youtube {
+  z-index: 1;
+  background-color: rgba(49, 49, 49, 0.01);
+}
+/* line 75, ../sass/screen.scss */
+.elyaCatalog {
+  width: 100%;
+  background-color: #1a3620;
   height: 800px;
 }
-/* line 20, ../sass/screen.scss */
-.elya .feedbacks {
-  background-color: #f59f78;
+/* line 80, ../sass/screen.scss */
+.elyaFooter {
+  width: 100%;
+  background-color: #142818;
   height: 800px;
 }

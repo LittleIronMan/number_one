@@ -37,7 +37,11 @@
                     height: '360',
                     width: '640',
                     videoId: 'cpSJF2FDP2A',
-                    playerVars: { 'autoplay': 1, 'controls': 0, 'rel': 0 },
+                    playerVars: { 'autoplay': 1,
+                        'controls': 0, // Player controls do not display in the player.
+                        'rel': 0, // If the parameter's value is set to 0, then the player does not show related videos.
+                        'modestbranding': 1 // Set the parameter value to 1 to prevent the YouTube logo from displaying in the control bar.
+                    },
                     events: {
                         'onReady': onPlayerReady,
                         'onStateChange': onPlayerStateChange

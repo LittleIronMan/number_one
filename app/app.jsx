@@ -12,6 +12,12 @@ const menuItems = {
     ]
 }
 
+class ElyaNavbar extends React.Component {
+    render() {
+        return <div className="elyaNavbar">
+        </div>;
+    }
+}
 class ElyaTitle extends React.Component {
     render() {
         return <div className="elyaVideo">
@@ -55,6 +61,7 @@ class ElyaFooter extends React.Component {
 }
 ReactDOM.render(
     <div className="elya">
+        <ElyaNavbar/>
         <ElyaMenu items={menuItems.items}/>
         <ElyaTitle/>
         <ElyaCatalog/>

@@ -45,7 +45,7 @@
       //width: 200px;
     }
   }
-  &VideoContainer {
+  &Video {
     position: relative;
     width: 100%;
     height: 0;
@@ -53,12 +53,17 @@
     //width: 100%;
     //background-color: #f5d85c;
     //height: 800px;
-    .video {
+    .youtube, .stub-youtube {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    .stub-youtube {
+      //pointer-events: none;
+      z-index: 2;
+      background-color: rgba(#313131, 0.01);
     }
   }
   &Catalog {

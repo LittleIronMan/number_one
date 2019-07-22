@@ -22,5 +22,63 @@
 <!--    если будет использоваться webpack - весь код ниже переместитиь в файл app.jsx-->
 <!--        <script type="text/babel">-->
 <!--        </script>-->
+<!--        <script src="https://www.youtube.com/iframe_api"></script>-->
+        <script type="text/javascript">
+            // load API
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // src="https://www.youtube.com/embed/DhDMu9_Sfyw?rel=0&amp;controls=0&amp;showinfo=0&loop=0&autoplay=1&autohide=1&wmode=opaque&enablejsapi=1&mute=1&modestbranding=1"
+            function onYouTubeIframeAPIReady() {
+                console.log("Youtube player ready!!!");
+                elyaPlayer = new YT.Player('elyaVideoPlayer', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'cpSJF2FDP2A',
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'rel': 0 },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+                console.log("Youtube player init object: ", elyaPlayer);
+            }
+
+            function onPlayerStateChange(event) {
+                if (event.data === YT.PlayerState.ENDED) {
+                    event.target.playVideo();
+                }
+            }
+            function onPlayerReady(event) {
+                console.log("Event target: ", event.target);
+                elyaPlayer = event.target;
+                elyaPlayer.playVideo();
+            }
+
+            // define player
+            console.log("Start script, init var \"elyaPlayer\"");
+            var elyaPlayer;
+
+            // переключение воиспроизведения по нажатию на зону с видео(при этом не контактируем с самой iframe напрямую)
+            let stub = document.getElementsByClassName("stub-youtube")[0];
+            console.log("Youtube-stub element", stub);
+            stub.addEventListener('click', function() {
+                console.log("Elya player: ", elyaPlayer);
+                console.log("Elya player state: ", elyaPlayer.getPlayerState());
+                if (typeof elyaPlayer.getPlayerState == "function") {
+                    if (elyaPlayer.getPlayerState() === 1) {
+                        elyaPlayer.pauseVideo();
+                        console.log("Pause video");
+                    } else {
+                        elyaPlayer.playVideo();
+                        console.log("Play video");
+                    }
+                }
+            });
+
+            //setTimeout(onYouTubeIframeAPIReadyFirst, 3000);
+        </script>
     </body>
 </html>

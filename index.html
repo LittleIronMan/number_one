@@ -38,9 +38,12 @@
                     width: '640',
                     videoId: 'cpSJF2FDP2A',
                     playerVars: { 'autoplay': 1,
-                        'controls': 0, // Player controls do not display in the player.
-                        'rel': 0, // If the parameter's value is set to 0, then the player does not show related videos.
-                        'modestbranding': 1 // Set the parameter value to 1 to prevent the YouTube logo from displaying in the control bar.
+                        controls: 0, // Player controls do not display in the player.
+                        showinfo: 0, // Hide the video title(deprecated - больше не работает)
+                        rel: 0, // If the parameter's value is set to 0, then the player does not show related videos.
+                        modestbranding: 1, // Set the parameter value to 1 to prevent the YouTube logo from displaying in the control bar.
+                        cc_load_policy: 0, // выключить субтитры("closed captions" - их и так нет)
+                        iv_load_policy: 3  // выключить аннотацию(её и так нет)
                     },
                     events: {
                         'onReady': onPlayerReady,
@@ -58,6 +61,7 @@
             function onPlayerReady(event) {
                 console.log("Event target: ", event.target);
                 elyaPlayer = event.target;
+                elyaPlayer.mute(); // выключить звук у видео
                 elyaPlayer.playVideo();
             }
 

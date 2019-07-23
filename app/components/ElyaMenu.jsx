@@ -1,6 +1,7 @@
 'use strict';
 var React = require('react');
 var {Motion, StaggeredMotion, spring} = require('react-motion');
+const Link = require("react-router-dom").Link;
 
 // Эти данные заданы в css, скопируй их оттуда
 const M_X = 0.5;
@@ -95,10 +96,14 @@ class ElyaMenu extends React.Component {
             <StaggeredMotion defaultStyles={itemsTargetStyles} styles={calculateStylesForNextFrame}>
                 {interpolatedStyles =>
                     <div>
-                        {interpolatedStyles.map(({width, height, top, left}, index) =>
-                            <div className="menu-item" key={index} style={{top: `${top}em`, left: `${left}em`}} >
-                                {this.props.items[index]}
-                            </div>
+                        {interpolatedStyles.map(({width, height, top, left}, index) => {
+                                const item = this.props.items[index];
+                                return <div className="menu-item"
+                                            key={index}
+                                            style={{top: `${top}em`, left: `${left}em`}}>
+                                    <Link to={item.path}>{item.text}</Link>
+                                </div>
+                            }
                         )}
                     </div>
                 }

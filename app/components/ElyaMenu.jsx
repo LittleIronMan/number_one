@@ -2,23 +2,23 @@
 var React = require('react');
 var {Motion, StaggeredMotion, spring} = require('react-motion');
 
-const MENU_BUTTON_WIDTH = 60;
-const MENU_BUTTON_HEIGHT = 60;
-const MENU_ITEM_WIDTH = 200;
-const MENU_ITEM_HEIGHT = 60;
-// Жестко заданные значения позиции главной кнопки
-const M_X = 5;
-const M_Y = 5;
+// Эти данные заданы в css, скопируй их оттуда
+const M_X = 0.5;
+const M_Y = 0.5;
+const MENU_BUTTON_HEIGHT = 2;//em
+const MENU_ITEM_HEIGHT = 2;
+
+const MENU_ITEM_WIDTH = 7;
+const TRIGGER_DISTANCE = 2;
 
 const HIDDEN = false;
 const VISIBLE = true;
-const TRIGGER_DISTANCE = 30;
 
-const SPRING_CONFIG = {stiffness: 400, damping: 28};
+const SPRING_CONFIG = {stiffness: 400, damping: 25};
 
 function getItemStyle(pos, buttonIndex, animated=true) {
-    let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH -10 : 0);
-    let y = M_Y + MENU_BUTTON_HEIGHT + 10 + (MENU_ITEM_HEIGHT * buttonIndex);
+    let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH : 0);
+    let y = M_Y + MENU_BUTTON_HEIGHT + (MENU_ITEM_HEIGHT * buttonIndex) + 0.5; //em
     return {
         //width: MENU_ITEM_WIDTH,
         //height: MENU_ITEM_HEIGHT,
@@ -38,15 +38,6 @@ class ElyaMenu extends React.Component {
 
         // Привязываем this к функции
         this.toggleMenu = this.toggleMenu.bind(this);
-    }
-
-    mainButtonStyle() {
-        return {
-            width: MENU_BUTTON_WIDTH,
-            height: MENU_BUTTON_HEIGHT,
-            left: M_X,
-            top: M_Y
-        };
     }
 
     toggleMenu() {
@@ -105,7 +96,7 @@ class ElyaMenu extends React.Component {
                 {interpolatedStyles =>
                     <div>
                         {interpolatedStyles.map(({width, height, top, left}, index) =>
-                            <div className="menu-item" key={index} style={{top, left}} >
+                            <div className="menu-item" key={index} style={{top: `${top}em`, left: `${left}em`}} >
                                 {this.props.items[index]}
                             </div>
                         )}
@@ -130,7 +121,7 @@ class ElyaMenu extends React.Component {
                 <Motion style={mainButtonRotation}>
                     {({rotate}) =>
                         <div className="menu-button" onClick={this.toggleMenu}
-                             style={{...this.mainButtonStyle(), transform: `rotate(${rotate}deg)`}}>
+                             style={{transform: `rotate(${rotate}deg)`}}>
                             <i className="fa fa-bars"/>
                         </div>
                     }

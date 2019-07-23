@@ -7,14 +7,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
 
+html { font-size: calc(1em + 1vw); }
+
 $mainColor: #172f1c;
+
 .elya {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  //font-size: 16px;
+  //font-size: 1em;
   background-color: $mainColor;
   color: lighten($mainColor, 70%);
   div.elya-menu {
-    $menuFontSize: 30px;
+    $menuFontSize: 4vh;
     font-size: $menuFontSize;
     div.menu-button, div.menu-item {
       position: absolute;
@@ -26,30 +30,28 @@ $mainColor: #172f1c;
       border-color: #f5d85c;
     }
     div.menu-button {
-      //box-sizing: border-box;
-      //padding: auto;
-      // размер кнопки и её позиция захардкожены в модуле ElyaMenu.jsx
-      border-radius: 30px;
+      font-size: 1em;
+      width: 2em;
+      height: 2em;
+      top: 0.5em;
+      left: 0.5em;
+      border-radius: 1em;
       i {
-        margin-top: 13px;
-        margin-left: 15px;
+        margin-top: 0.5em;
+        margin-left: 0.55em;
       }
     }
     div.menu-item {
-      $distPerItems: 60px;
-      $height: 50px;
-      height: $height;
-      line-height: $height;
-      $padding: ($height - $menuFontSize) / 2;
-      padding-left: $padding;
-      padding-right: $padding;
-      //width: 200px;
+      height: 1.5em;
+      line-height: 1.5em;
+      padding-left: 0.4em;
+      padding-right: 0.4em;
     }
   }
   &Navbar {
     width: 100%;
     //background-color: #b5f571;
-    height: 70px;
+    height: 12vh;
   }
   &Video {
     position: relative;

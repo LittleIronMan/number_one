@@ -10,13 +10,14 @@
 html { font-size: calc(1em + 1vw); }
 
 $mainColor: #172f1c;
+$mainTextColor: lighten($mainColor, 70%);
 
 .elya {
   font-family: 'Open Sans', sans-serif;
   //font-size: 16px;
   //font-size: 1em;
   background-color: $mainColor;
-  color: lighten($mainColor, 70%);
+  color: $mainTextColor;
   div.elya-menu {
     $menuFontSize: 4vh;
     font-size: $menuFontSize;
@@ -27,15 +28,15 @@ $mainColor: #172f1c;
       border-style: solid;
       border-radius: 10px;
       border-width: 2px;
-      border-color: #f5d85c;
+      border-color: $mainTextColor;
     }
     div.menu-button {
       font-size: 1em;
-      width: 2em;
-      height: 2em;
-      top: 0.5em;
-      left: 0.5em;
       border-radius: 1em;
+      width: 2em; // захардкожен в ElyaMenu.jsx
+      height: 2em; // захардкожен в ElyaMenu.jsx
+      top: 0.5em; // захардкожен в ElyaMenu.jsx
+      left: 0.5em; // захардкожен в ElyaMenu.jsx
       i {
         margin-top: 0.5em;
         margin-left: 0.55em;

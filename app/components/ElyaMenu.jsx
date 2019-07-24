@@ -42,7 +42,6 @@ class ElyaMenu extends React.Component {
     }
 
     toggleMenu() {
-        console.log("Toggle Menu Button!");
         let{targetPos} = this.state;
         this.setState({
             firstRender: false,

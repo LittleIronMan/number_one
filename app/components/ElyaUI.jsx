@@ -46,7 +46,7 @@ class ElyaTitleYoutube extends React.Component {
                 if (state === YT.PlayerState.PLAYING) {
                     elyaPlayer.pauseVideo();
                 }
-                else if (state === YT.PlayerState.PAUSED){
+                else {
                     elyaPlayer.playVideo();
                 }
             }

@@ -17,6 +17,13 @@
 <body>
     <div id="app"></div>
 <!--    раскомментировать, если будет использоваться webpack-->
+        <script type="text/javascript">
+            // глобальные константы, некоторые используются и в других модулях
+            var youtubeAPI_ready = false; // флаг того Youtube API был загружен и можно вызывать функцию createYoutubePlayer()
+            var youtubePlayer = null; // плеер, но еще не готовый. Т.е. для него еще нельзя будет вызывать функцию playVideo() и т.п.
+            var elyaPlayer = null; // готовый плеер
+        </script>
+
         <script src="public/bundle.js"></script>
 
 <!--    если будет использоваться webpack - весь код ниже переместитиь в файл app.jsx-->
@@ -33,11 +40,16 @@
             // src="https://www.youtube.com/embed/DhDMu9_Sfyw?rel=0&amp;controls=0&amp;showinfo=0&loop=0&autoplay=1&autohide=1&wmode=opaque&enablejsapi=1&mute=1&modestbranding=1"
             function onYouTubeIframeAPIReady() {
                 console.log("Youtube player ready!!!");
-                elyaPlayer = new YT.Player('elyaVideoPlayer', {
+                youtubeAPI_ready = true;
+                createYoutubePlayer();
+            }
+            function createYoutubePlayer() {
+                youtubePlayer = new YT.Player('elyaVideoPlayer', {
                     height: '360',
                     width: '640',
                     videoId: 'cpSJF2FDP2A',
-                    playerVars: { 'autoplay': 1,
+                    playerVars: {
+                        autoplay: 1,
                         controls: 0, // Player controls do not display in the player.
                         showinfo: 0, // Hide the video title(deprecated - больше не работает)
                         rel: 0, // If the parameter's value is set to 0, then the player does not show related videos.
@@ -50,43 +62,25 @@
                         'onStateChange': onPlayerStateChange
                     }
                 });
-                console.log("Youtube player init object: ", elyaPlayer);
-            }
 
-            function onPlayerStateChange(event) {
-                if (event.data === YT.PlayerState.ENDED) {
-                    event.target.playVideo();
-                }
-            }
-            function onPlayerReady(event) {
-                console.log("Event target: ", event.target);
-                elyaPlayer = event.target;
-                elyaPlayer.mute(); // выключить звук у видео
-                elyaPlayer.playVideo();
-            }
-
-            // define player
-            console.log("Start script, init var \"elyaPlayer\"");
-            var elyaPlayer;
-
-            // переключение воиспроизведения по нажатию на зону с видео(при этом не контактируем с самой iframe напрямую)
-            let stub = document.getElementsByClassName("stub-youtube")[0];
-            console.log("Youtube-stub element", stub);
-            stub.addEventListener('click', function() {
-                console.log("Elya player: ", elyaPlayer);
-                console.log("Elya player state: ", elyaPlayer.getPlayerState());
-                if (typeof elyaPlayer.getPlayerState == "function") {
-                    if (elyaPlayer.getPlayerState() === 1) {
-                        elyaPlayer.pauseVideo();
-                        console.log("Pause video");
-                    } else {
-                        elyaPlayer.playVideo();
-                        console.log("Play video");
+                function onPlayerStateChange(event) {
+                    // для информации - все возможные состояния плеера
+                    // YT.PlayerState.ENDED
+                    // YT.PlayerState.PLAYING
+                    // YT.PlayerState.PAUSED
+                    // YT.PlayerState.BUFFERING
+                    // YT.PlayerState.CUED
+                    if (event.data === YT.PlayerState.ENDED) {
+                        event.target.playVideo();
                     }
                 }
-            });
-
-            //setTimeout(onYouTubeIframeAPIReadyFirst, 3000);
+                function onPlayerReady(event) {
+                    console.log("onPlayerReady event, target: ", event.target);
+                    elyaPlayer = event.target;
+                    elyaPlayer.mute(); // выключить звук у видео
+                    elyaPlayer.playVideo();
+                }
+            }
         </script>
     </body>
 </html>

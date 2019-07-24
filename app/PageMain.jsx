@@ -1,6 +1,6 @@
 var React = require('react');
 var ElyaMenu = require('./components/ElyaMenu.jsx');
-var {ElyaNavbar, ElyaTitle, ElyaFooter} = require('./components/ElyaUI.jsx');
+var {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} = require('./components/ElyaUI.jsx');
 
 const menuItems = [
     {text: "main", path: "/"},
@@ -23,7 +23,7 @@ class ElyaPageMain extends React.Component {
         return <div className="elya">
             <ElyaNavbar/>
             <ElyaMenu items={menuItems}/>
-            <ElyaTitle/>
+            <ElyaTitleYoutube/>
             <ElyaCatalogMini/>
             <ElyaFooter/>
         </div>;

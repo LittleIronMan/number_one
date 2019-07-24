@@ -118,7 +118,7 @@ $mainTextColor: lighten($mainColor, 70%);
         z-index: 1;
 
         &:hover {
-          // когда курсор наводит на прямоугольник, он рисутеся ниже
+          // когда курсор наводит на прямоугольник - тот появляется
           background-color: $focusBarColor;
         }
       }

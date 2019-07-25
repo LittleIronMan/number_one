@@ -62,17 +62,30 @@ $mainTextColor: lighten($mainColor, 70%);
     //width: 100%;
     //background-color: #f5d85c;
     //height: 800px;
-    .youtube, .stub-youtube {
+    .youtube, .stub-youtube, .youtube-preview {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
     }
-    .stub-youtube {
-      //pointer-events: none;
+    .youtube-preview, .stub-youtube {
       z-index: 1;
-      background-color: rgba(#313131, 0.01);
+    }
+    .youtube-preview { // превьюшка над видео
+      background-image: url("../img/youtube.jpg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      i.fa-play-circle {
+        margin-top: 25%;
+        font-size: 3rem;
+        color: rgba($mainTextColor, 0.75);
+        pointer-events:none;
+      }
+    }
+    .stub-youtube { // прозрачный контейнер над видео
+      background-color: rgba($mainColor, 0);
     }
   }
   &Catalog {

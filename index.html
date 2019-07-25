@@ -18,9 +18,8 @@
     <div id="app"></div>
         <script type="text/javascript">
             // глобальные константы, некоторые используются и в других модулях
-            var youtubeAPI_ready = false; // флаг того Youtube API был загружен и можно вызывать функцию createYoutubePlayer()
-            var youtubePlayer = null; // плеер, но еще не готовый. Т.е. для него еще нельзя будет вызывать функцию playVideo() и т.п.
-            var elyaPlayer = null; // готовый плеер
+            var youtubeAPI_ready = false; // флаг того Youtube API был загружен и можно отрисовывать плеер в каком-нибудь контейнере
+            var youtubePlayers = {}; // глобальная переменная, хранит в себе все плееры на странице
         </script>
 
         <script src="public/bundle.js"></script>
@@ -37,45 +36,6 @@
             function onYouTubeIframeAPIReady() {
                 console.log("Youtube player ready!!!");
                 youtubeAPI_ready = true;
-                createYoutubePlayer();
-            }
-            function createYoutubePlayer() {
-                youtubePlayer = new YT.Player('elyaVideoPlayer', {
-                    height: '360',
-                    width: '640',
-                    videoId: 'cpSJF2FDP2A',
-                    playerVars: {
-                        autoplay: 1,
-                        controls: 0, // Player controls do not display in the player.
-                        showinfo: 0, // Hide the video title(deprecated - больше не работает)
-                        rel: 0, // If the parameter's value is set to 0, then the player does not show related videos.
-                        modestbranding: 1, // Set the parameter value to 1 to prevent the YouTube logo from displaying in the control bar.
-                        cc_load_policy: 0, // выключить субтитры("closed captions" - их и так нет)
-                        iv_load_policy: 3  // выключить аннотацию(её и так нет)
-                    },
-                    events: {
-                        'onReady': onPlayerReady,
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-
-                function onPlayerStateChange(event) {
-                    // для информации - все возможные состояния плеера
-                    // YT.PlayerState.ENDED
-                    // YT.PlayerState.PLAYING
-                    // YT.PlayerState.PAUSED
-                    // YT.PlayerState.BUFFERING
-                    // YT.PlayerState.CUED
-                    if (event.data === YT.PlayerState.ENDED) {
-                        event.target.playVideo();
-                    }
-                }
-                function onPlayerReady(event) {
-                    console.log("onPlayerReady event, target: ", event.target);
-                    elyaPlayer = event.target;
-                    elyaPlayer.mute(); // выключить звук у видео
-                    elyaPlayer.playVideo();
-                }
             }
         </script>
     </body>

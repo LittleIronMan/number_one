@@ -87,7 +87,7 @@ html {
 /* line 24, ../sass/screen.scss */
 .elya div.elya-menu div.menu-button, .elya div.elya-menu div.menu-item {
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   background-color: rgba(49, 49, 49, 0.7);
   border-style: solid;
   border-radius: 10px;
@@ -128,7 +128,7 @@ html {
   padding-bottom: 56.25%;
 }
 /* line 65, ../sass/screen.scss */
-.elyaVideo .youtube, .elyaVideo .stub-youtube {
+.elyaVideo .youtube, .elyaVideo .stub-youtube, .elyaVideo .youtube-preview {
   position: absolute;
   top: 0;
   left: 0;
@@ -136,23 +136,40 @@ html {
   height: 100%;
 }
 /* line 72, ../sass/screen.scss */
-.elyaVideo .stub-youtube {
+.elyaVideo .youtube-preview, .elyaVideo .stub-youtube {
   z-index: 1;
-  background-color: rgba(49, 49, 49, 0.01);
 }
-/* line 78, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
+.elyaVideo .youtube-preview {
+  background-image: url("../img/youtube.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+/* line 80, ../sass/screen.scss */
+.elyaVideo .youtube-preview i.fa-play-circle {
+  margin-top: 25%;
+  font-size: 3rem;
+  color: rgba(199, 228, 205, 0.75);
+  pointer-events: none;
+}
+/* line 87, ../sass/screen.scss */
+.elyaVideo .stub-youtube {
+  background-color: rgba(23, 47, 28, 0);
+}
+/* line 91, ../sass/screen.scss */
 .elyaCatalog {
   width: 100%;
   background-color: #1a3620;
   height: 800px;
 }
-/* line 83, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .elyaFooter {
   width: 100%;
   background-color: #142818;
   height: 800px;
 }
-/* line 88, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 .elyaCatalogItem {
   width: 600px;
   border-style: solid;
@@ -162,13 +179,13 @@ html {
   overflow: hidden;
   position: relative;
 }
-/* line 97, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .elyaCatalogItem .img-container {
   width: 600px;
   height: 600px;
   position: relative;
 }
-/* line 101, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .elyaCatalogItem .img-container .img {
   position: absolute;
   width: 600px;
@@ -178,38 +195,38 @@ html {
   background-position: center;
   pointer-events: none;
 }
-/* line 113, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .elyaCatalogItem .img-container .focus-capture {
   position: absolute;
   background-color: rgba(40, 81, 48, 0);
   height: 600px;
   z-index: 1;
 }
-/* line 120, ../sass/screen.scss */
-.elyaCatalogItem .img-container .focus-capture:hover {
+/* line 133, ../sass/screen.scss */
+.elyaCatalogItem .img-container .focus-capture.active {
   background-color: #285130;
 }
-/* line 126, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 .elyaCatalogItem hr {
   margin-top: 0;
   margin-bottom: 0;
   width: 90%;
   border-color: #83c290;
 }
-/* line 132, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .elyaCatalogItem .footer {
   width: 100%;
   height: 4.5rem;
   padding-top: 1rem;
 }
-/* line 136, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .elyaCatalogItem .footer div.price {
   float: right;
   font-size: 1.5rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
 }
-/* line 142, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .elyaCatalogItem .footer button {
   float: left;
   background-color: #060d08;

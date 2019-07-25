@@ -34,7 +34,6 @@ class ElyaTitleYoutube extends React.Component {
                 events: {
                     'onReady': () => {
                         console.log("onPlayerReady event");
-                        console.log(youtubePlayers);
                         youtubePlayers[this.props.id].ready = true;
                         let player = youtubePlayers[this.props.id].player;
                         player.mute(); // выключить звук у видео

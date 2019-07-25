@@ -31,11 +31,15 @@ const catalogItems = [
 
 class ElyaCatalog extends React.Component {
     render() {
-        return <div className="elyaCatalog">
-            images Gallery
-            {catalogItems.map((item, index) =>
-                <ElyaCatalogItem item={item}/>
-            )}
+        return <div className="elyaCatalogWrapper">
+            <div className="container-fluid">
+                images Gallery
+                <div className="row">
+                {catalogItems.map((item, index) =>
+                    <ElyaCatalogItem item={item}/>
+                )}
+                </div>
+            </div>
         </div>;
     }
 }

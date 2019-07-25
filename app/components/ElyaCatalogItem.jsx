@@ -4,6 +4,7 @@ var React = require('react');
 class ElyaCatalogItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {selectedImage: 0}; // по-умолчанию показывается первое изображение
     }
     render() {
         let images = this.props.item.images;
@@ -16,16 +17,13 @@ class ElyaCatalogItem extends React.Component {
                 // выше всех самое первое изображение, остальные в порядке убывания
                 images.map((img, index) =>
                     <div>
-                        <div className="img" id={id + index} style={{backgroundImage: `url("${img}")`, zIndex: `${images.length - index}`}}/>
-                        <div className="focus-capture" style={{width: `${focusWidth}%`, left: `${focusWidth * index}%`}}
+                        <div className="img" id={id + index} style={{backgroundImage: `url("${img}")`,
+                            // selectedImage будет отрисовываться поверх других изображений
+                            zIndex: `${index === this.state.selectedImage ? 10 : 1}`}}/>
+                        <div className={`focus-capture${index === this.state.selectedImage ? " active" : ""}`}
+                             style={{width: `${focusWidth}%`, left: `${focusWidth * index}%`}}
                              onMouseOver={()=> {
-                                 // когда курсор попадает на зону прямоугольника -
-                                 // поднимаем соответствующую картинку над остальными
-                                 document.getElementById(id + index).style.zIndex = 10;
-                             }}
-                             onMouseLeave={()=> {
-                                 // когда курсор выходит из зоны - устанавливаем соответствую картинку в порядке по умолчанию
-                                 document.getElementById(id + index).style.zIndex = images.length - index;
+                                 this.setState({selectedImage: index});
                              }}
                         />
                     </div>

@@ -23,7 +23,7 @@ $mainTextColor: lighten($mainColor, 70%);
     font-size: $menuFontSize;
     div.menu-button, div.menu-item {
       position: absolute;
-      z-index: 10;
+      z-index: 20;
       background-color: rgba(#313131, 0.7);
       border-style: solid;
       border-radius: 10px;
@@ -117,7 +117,7 @@ $mainTextColor: lighten($mainColor, 70%);
         height: 600px;
         z-index: 1;
 
-        &:hover {
+        &.active {
           // когда курсор наводит на прямоугольник - тот появляется
           background-color: $focusBarColor;
         }

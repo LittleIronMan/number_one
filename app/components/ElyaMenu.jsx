@@ -56,13 +56,13 @@ class ElyaMenu extends React.Component {
         // Определяем целевые стили для кнопок. Эти стили не анимированные, а фиксированные.
         // Т.е. если меню открыто, то целевым стилем для них будет скрытая позиция за пределами экрана.
         // И наоборот, если меню скрыто, то целевым стилем для них будет видимая позиция в верхней-правой части экрана.
-        const itemsTargetStyles = this.props.items.map((item, i) => {
+        const itemsTargetStyles = this.props.menuItems.map((item, i) => {
             return getItemStyle(currentPos, i, false);
         });
 
         // Здесь определяем анимированные целевые стили для кнопок.
         // По-сути это те-же стили, только в них изменяемые величины обернуты в функцию spring()
-        const itemsTargetStylesSpring = this.props.items.map((item, i) => {
+        const itemsTargetStylesSpring = this.props.menuItems.map((item, i) => {
             return getItemStyle(newPos, i, true);
         });
 
@@ -96,7 +96,7 @@ class ElyaMenu extends React.Component {
                 {interpolatedStyles =>
                     <div>
                         {interpolatedStyles.map(({width, height, top, left}, index) => {
-                                const item = this.props.items[index];
+                                const item = this.props.menuItems[index];
                                 return <div className="menu-item"
                                             key={index}
                                             style={{top: `${top}em`, left: `${left}em`}}>

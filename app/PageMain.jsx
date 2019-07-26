@@ -14,7 +14,7 @@ class ElyaPageMain extends React.Component {
     render() {
         return <div className="elya">
             <ElyaNavbar/>
-            <ElyaMenu items={menuItems}/>
+            <ElyaMenu menuItems={menuItems}/>
             <ElyaTitleYoutube/>
             <ElyaCatalogMini/>
             <ElyaFooter/>

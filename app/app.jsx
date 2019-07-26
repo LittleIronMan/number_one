@@ -6,12 +6,14 @@ const Switch = require("react-router-dom").Switch;
 
 var MainPage = require('./PageMain.jsx');
 var CatalogPage = require('./PageCatalog.jsx');
+var ItemPage = require('./PageItem.jsx');
 
 ReactDOM.render(
     <Router>
         <Switch>
             <Route exact path="/" component={MainPage} />
             <Route path="/catalog" component={CatalogPage} />
+            <Route path="/product/:id" component={ItemPage} />
             <Route component={() => <div>Not found</div>} />
         </Switch>
     </Router>,

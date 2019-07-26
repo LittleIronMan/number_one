@@ -10,12 +10,12 @@ const MENU_BUTTON_HEIGHT = 2;//em
 const MENU_ITEM_HEIGHT = 2;
 
 const MENU_ITEM_WIDTH = 7;
-const TRIGGER_DISTANCE = 2;
+const TRIGGER_DISTANCE = 0.7;
 
 const HIDDEN = false;
 const VISIBLE = true;
 
-const SPRING_CONFIG = {stiffness: 400, damping: 25};
+const SPRING_CONFIG = {stiffness: 80, damping: 18};
 
 function getItemStyle(pos, buttonIndex, animated=true) {
     let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH : 0);

@@ -11,6 +11,23 @@ html { font-size: calc(1em + 1vw); }
 
 $mainColor: #172f1c;
 $mainTextColor: lighten($mainColor, 70%);
+a {
+  outline: none;
+  text-decoration: none;
+  color: $mainTextColor;
+  &:focus {
+    color: $mainTextColor;
+  }
+  &:link, &:visited {
+    color: $mainTextColor;
+  }
+  &:hover {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
+}
 
 .elya {
   font-family: 'Open Sans', sans-serif;

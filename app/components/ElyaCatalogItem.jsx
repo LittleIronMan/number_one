@@ -13,22 +13,19 @@ class ElyaCatalogItem extends React.Component {
         return <div className="elyaCatalogItem col-6 col-lg-4">
             <div className="context">
                 <div className="img-container">
-                {
-                    // несколько изображений накладываются друг на друга,
-                    // выше всех самое первое изображение, остальные в порядке убывания
-                    images.map((img, index) =>
-                        <div>
-                            <div className="img" id={id + index} style={{backgroundImage: `url("${img}")`,
-                                //selectedImage будет отрисовываться поверх других изображений
-                                zIndex: `${index === this.state.selectedImage ? 10 : 1}`}}/>
-                            <div className={`focus-capture${index === this.state.selectedImage ? " active" : ""}`}
-                                 style={{width: `${focusWidth}%`, left: `${focusWidth * index}%`}}
-                                 onMouseOver={()=> {
-                                     this.setState({selectedImage: index});
-                                 }}
-                            />
-                        </div>
-                )}
+                    {images.map((img, index) =>
+                        <div className="img" id={id + index} style={{
+                            backgroundImage: `url("${img}")`,
+                            //selectedImage будет отрисовываться поверх других изображений
+                            zIndex: `${index === this.state.selectedImage ? 10 : 1}`}}
+                        />)}
+                    {images.map((img, index) =>
+                        <div className={`focus-capture${index === this.state.selectedImage ? " active" : ""}`}
+                             style={{width: `${focusWidth}%`, left: `${focusWidth * index}%`}}
+                             onMouseOver={()=> {
+                                 this.setState({selectedImage: index});
+                             }}
+                        />)}
                 </div>
 
                 <hr/>

@@ -118,7 +118,7 @@ $mainTextColor: lighten($mainColor, 70%);
 
             .img-container {
               width: 100%;
-              padding-top: 100%; //очень хитрожопое свойство, которое бережет волосы на голове, когда нужно создать пустой квадратный контейнер
+              padding-top: calc(100% + 10px); //очень хитрожопое свойство, которое бережет волосы на голове, когда нужно создать пустой контейнер определенных размеров
               height: 0;
               position: relative;
               overflow: hidden;
@@ -126,8 +126,8 @@ $mainTextColor: lighten($mainColor, 70%);
               .img {
                 position: absolute;
                 width: 100%;
-                height: 100%;
-                margin-top: calc(-100% + 10px);
+                height: calc(100% - 10px);
+                margin-top: -100%;
                 background-size: cover;
                 background-position: center;
                 pointer-events: none;
@@ -135,11 +135,11 @@ $mainTextColor: lighten($mainColor, 70%);
 
               // прямоугольник, который будет захватывать положение курсора и менять порядок изображений в стопке
               .focus-capture {
-                margin-top: -100%;
+                margin-top: calc(-100% - 10px);
                 $focusBarColor: lighten($mainColor, 10%);
                 position: absolute;
                 background-color: rgba($focusBarColor, 0); // когда курсор не в зоне прямоугольника - тот прозрачный
-                height: 600px;
+                height: 100%;
                 z-index: 1;
 
                 &.active {

@@ -169,76 +169,98 @@ a {
             border-color: $catalogBorderColor;
             overflow: hidden;
 
-            .img-container {
+            $imgHeight: 95%;
+            .slider {
               position: relative;
-              width: 100%;
-              $imgHeight: 95%;
-              padding-top: $imgHeight; //очень хитрожопое свойство, которое бережет волосы на голове, когда нужно создать пустой контейнер определенных размеров
-              height: 0;
-              overflow: hidden;
 
-              .img, .slider-arrows {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                margin-top: -$imgHeight;
-              }
-
-              .img {
-                background-size: cover;
-                background-position: center;
-                //pointer-events: none;
-                z-index: 10;
-              }
-
-              .slider-arrows {
-                &.mobile {
-                  pointer-events: none;
-                  display: none;
+              .slider-swipeable {
+                .slider-img, .slider-arrows {
+                  width: 100%;
+                  padding-bottom: $imgHeight; //очень хитрожопое свойство, которое бережет волосы на голове, когда нужно создать пустой контейнер определенных размеров
+                  //height: 0;
                 }
-                z-index: 11;
-                @include opacity(0);
-                transition: opacity 300ms;
-                &-enter, &-appear {
-                  @include opacity(0);
-                  &-done {
-                    @include opacity(1);
+
+                .slider-img {
+                  position: relative;
+                  overflow: hidden;
+
+                  .img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    //margin-top: -$imgHeight;
+                  }
+
+                  .img {
+                    background-size: cover;
+                    background-position: center;
+                    //pointer-events: none;
+                    z-index: 10;
                   }
                 }
-                &-enter.slider-arrows-enter-active, &-appear.slider-arrows-appear-active{
-                  @include opacity(1);
+
+                .slider-arrows {
+                  position: absolute;
+                  top: 0;
+                  //margin-top: -$imgHeight;
+                  @include opacity(0);
                   transition: opacity 300ms;
-                }
-                &-exit {
-                  //@include opacity(1);
-                  &.slider-arrows-exit-active {
+                  z-index: 11;
+
+                  &.mobile {
+                    pointer-events: none;
+                    display: none;
+                  }
+
+                  &-enter, &-appear {
                     @include opacity(0);
+
+                    &-done {
+                      @include opacity(1);
+                    }
+                  }
+
+                  &-enter.slider-arrows-enter-active, &-appear.slider-arrows-appear-active {
+                    @include opacity(1);
                     transition: opacity 300ms;
                   }
-                  &-done {
-                    @include opacity(0);
+
+                  &-exit {
+                    //@include opacity(1);
+                    &.slider-arrows-exit-active {
+                      @include opacity(0);
+                      transition: opacity 300ms;
+                    }
+
+                    &-done {
+                      @include opacity(0);
+                    }
                   }
-                }
-                // стрелки переключения картинок в слайдере
-                .arrow {
-                  position: absolute;
-                  width: 15%;
-                  $arrowHeight: 15%;
-                  height: 100%;
-                  background-color: rgba(#aaaaaa, 0);
-                  vertical-align: middle;
-                  .icon {
-                    position: relative;
-                    top: 50%;
-                    transform: translateY(-50%); // выравнивание по вертикали
-                    width: 100%;
-                    color: rgba($mainTextColor, 0.5);
-                  }
-                  &.left {
-                    left: 0;
-                  }
-                  &.right {
-                    right: 0;
+
+                  // стрелки переключения картинок в слайдере
+                  .arrow {
+                    position: absolute;
+                    width: 15%;
+                    $arrowHeight: 15%;
+                    height: 100%;
+                    background-color: rgba(#aaaaaa, 0.1);
+                    vertical-align: middle;
+
+                    .icon {
+                      position: relative;
+                      top: 50%;
+                      transform: translateY(-50%); // выравнивание по вертикали
+                      width: 100%;
+                      color: rgba($mainTextColor, 0.5);
+                    }
+
+                    &.left {
+                      left: 0;
+                    }
+
+                    &.right {
+                      right: 0;
+                    }
                   }
                 }
               }

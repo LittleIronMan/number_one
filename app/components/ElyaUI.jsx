@@ -2,7 +2,18 @@ var React = require('react');
 
 class ElyaNavbar extends React.Component {
     render() {
-        return <div className="elyaNavbar">
+        return <div className="elyaNavbar container-fluid">
+            <div className="row">
+                <div className="menu-button col"></div>
+                <div className="logo col"/>
+                <div className="unused col"></div>
+                <div className="cart col">
+                    <i className="icon fa fa-shopping-cart"/>
+                </div>
+                <div className="e-mail col">
+                    <i className="icon fa fa-envelope"/>
+                </div>
+            </div>
         </div>;
     }
 }

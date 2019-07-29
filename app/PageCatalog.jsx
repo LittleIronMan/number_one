@@ -7,7 +7,9 @@ class ElyaCatalog extends React.Component {
     render() {
         return <div className="elyaCatalogWrapper">
             <div className="container-fluid">
-                images Gallery
+                <div className="row">
+                    <div className="catalog-title col-12"> CATALOG </div>
+                </div>
                 <div className="row">
                 {catalogItems.map((item, index) =>
                     <ElyaCatalogItem item={item}/>

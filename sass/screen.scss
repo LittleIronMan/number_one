@@ -76,7 +76,32 @@ a {
   &Navbar {
     width: 100%;
     //background-color: #b5f571;
-    height: 12vh;
+    $navbarHeight: 12vh;
+    height: $navbarHeight;
+    .menu-button {
+      max-width: $navbarHeight;
+    }
+    .logo {
+      position: relative;
+      background-position: left;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../img/logo.png");
+      $logoHeight: $navbarHeight*0.8;
+      width: $logoHeight * 1.6;
+      height: $logoHeight;
+      top: ($navbarHeight - $logoHeight)/2;
+    }
+    .cart, .e-mail {
+      text-align: center;
+      max-width: 5rem;
+      .icon {
+        position: relative;
+        font-size: 3rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
   &Video {
     position: relative;
@@ -97,7 +122,7 @@ a {
       z-index: 1;
     }
     .youtube-preview { // превьюшка над видео
-      background-image: url("../img/youtube.jpg");
+      background-image: url("../img/youtube-no-logo.jpg");
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -126,8 +151,10 @@ a {
     padding: 10px;
     .container-fluid { // товары располагаются в адаптивной сетке boostrap'a
       .row {
-        &:hover {
-          opacity: 1.0;
+        .catalog-title {
+          text-align: center;
+          font-size: 2rem;
+          padding-bottom: 1rem;
         }
         .elyaCatalogItem /*.col-<breakpoint>-<X>*/
         {
@@ -198,7 +225,7 @@ a {
                   width: 15%;
                   $arrowHeight: 15%;
                   height: 100%;
-                  background-color: rgba(#aaaaaa, 0.1);
+                  background-color: rgba(#aaaaaa, 0);
                   vertical-align: middle;
                   .icon {
                     position: relative;

@@ -219,6 +219,26 @@ a {
                   }
                 }
               }
+
+              .slider-dots {
+                position: absolute;
+                display: flex;
+                $sliderWidth: 60%;
+                width: $sliderWidth;
+                margin-left: (100% - $sliderWidth) / 2;
+                height: 5px;
+                margin-top: -5%;
+                z-index: 11;
+                .dot {
+                  width: 100%;
+                  background-color: rgba($mainTextColor, 0.3);
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  &.active {
+                    background-color: $mainTextColor;
+                  }
+                }
+              }
             }
 
             hr {

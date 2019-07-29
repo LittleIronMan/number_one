@@ -74,18 +74,41 @@ html {
   font-size: calc(1em + 1vw);
 }
 
-/* line 15, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
+a {
+  outline: none;
+  text-decoration: none;
+  color: #c7e4cd;
+}
+/* line 23, ../sass/screen.scss */
+a:focus {
+  color: #c7e4cd;
+}
+/* line 26, ../sass/screen.scss */
+a:link, a:visited {
+  color: #c7e4cd;
+}
+/* line 29, ../sass/screen.scss */
+a:hover {
+  color: white;
+}
+/* line 32, ../sass/screen.scss */
+a:active {
+  color: white;
+}
+
+/* line 37, ../sass/screen.scss */
 .elya {
   font-family: 'Open Sans', sans-serif;
   background-color: #172f1c;
   color: #c7e4cd;
 }
-/* line 21, ../sass/screen.scss */
-.elya div.elya-menu {
+/* line 43, ../sass/screen.scss */
+.elya .elya-menu {
   font-size: 4vh;
 }
-/* line 24, ../sass/screen.scss */
-.elya div.elya-menu div.menu-button, .elya div.elya-menu div.menu-item {
+/* line 46, ../sass/screen.scss */
+.elya .elya-menu .menu-button, .elya .elya-menu div.menu-item {
   position: absolute;
   z-index: 20;
   background-color: rgba(49, 49, 49, 0.7);
@@ -94,40 +117,45 @@ html {
   border-width: 2px;
   border-color: #c7e4cd;
 }
-/* line 33, ../sass/screen.scss */
-.elya div.elya-menu div.menu-button {
-  font-size: 1em;
-  border-radius: 1em;
+/* line 55, ../sass/screen.scss */
+.elya .elya-menu .menu-button {
   width: 2em;
   height: 2em;
   top: 0.5em;
   left: 0.5em;
+  display: table;
+  font-size: 1em;
+  border-radius: 1em;
 }
-/* line 40, ../sass/screen.scss */
-.elya div.elya-menu div.menu-button i {
-  margin-top: 0.5em;
-  margin-left: 0.55em;
+/* line 63, ../sass/screen.scss */
+.elya .elya-menu .menu-button .for-icon {
+  display: table-cell;
+  vertical-align: middle;
 }
-/* line 45, ../sass/screen.scss */
-.elya div.elya-menu div.menu-item {
+/* line 66, ../sass/screen.scss */
+.elya .elya-menu .menu-button .for-icon i {
+  width: 100%;
+}
+/* line 71, ../sass/screen.scss */
+.elya .elya-menu .menu-item {
   height: 1.5em;
   line-height: 1.5em;
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
-/* line 52, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .elyaNavbar {
   width: 100%;
   height: 12vh;
 }
-/* line 57, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .elyaVideo {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
 }
-/* line 65, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 .elyaVideo .youtube, .elyaVideo .stub-youtube, .elyaVideo .youtube-preview {
   position: absolute;
   top: 0;
@@ -135,109 +163,184 @@ html {
   width: 100%;
   height: 100%;
 }
-/* line 72, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .elyaVideo .youtube-preview, .elyaVideo .stub-youtube {
   z-index: 1;
 }
-/* line 75, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 .elyaVideo .youtube-preview {
   background-image: url("../img/youtube.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
 }
-/* line 80, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .elyaVideo .youtube-preview i.fa-play-circle {
   margin-top: 25%;
   font-size: 3rem;
   color: rgba(199, 228, 205, 0.75);
   pointer-events: none;
 }
-/* line 87, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .elyaVideo .stub-youtube {
   background-color: rgba(23, 47, 28, 0);
 }
-/* line 91, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 .elyaCatalog {
   width: 100%;
   background-color: #1a3620;
   height: 800px;
 }
-/* line 96, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 .elyaFooter {
   width: 100%;
   background-color: #142818;
   height: 800px;
 }
-/* line 101, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 .elyaCatalogWrapper {
   padding: 10px;
 }
-/* line 105, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row:hover {
+  opacity: 1.0;
+}
+/* line 134, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem {
   padding: 10px;
 }
-/* line 108, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context {
   width: 100%;
-  height: 100%;
   border-style: solid;
   border-radius: 10px;
   border-width: 1px;
   border-color: #83c290;
   overflow: hidden;
 }
-/* line 119, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container {
-  width: 100%;
-  padding-top: calc(100% + 10px);
-  height: 0;
   position: relative;
+  width: 100%;
+  padding-top: 95%;
+  height: 0;
   overflow: hidden;
 }
-/* line 126, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .img {
+/* line 155, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .img, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows {
   position: absolute;
   width: 100%;
-  height: calc(100% - 10px);
-  margin-top: -100%;
+  height: 100%;
+  margin-top: -95%;
+}
+/* line 162, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .img {
   background-size: cover;
   background-position: center;
+  z-index: 10;
+}
+/* line 169, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows {
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+/* line 170, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows.mobile {
   pointer-events: none;
+  display: none;
 }
-/* line 137, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .focus-capture {
-  margin-top: calc(-100% - 10px);
+/* line 177, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear {
+  opacity: 0;
+}
+/* line 179, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter-done, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear-done {
+  opacity: 1;
+}
+/* line 183, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter.slider-arrows-enter-active, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear.slider-arrows-appear-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+/* line 189, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-exit.slider-arrows-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+/* line 193, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-exit-done {
+  opacity: 0;
+}
+/* line 198, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow {
+  display: table;
   position: absolute;
-  background-color: rgba(40, 81, 48, 0);
+  width: 15%;
   height: 100%;
-  z-index: 1;
+  background-color: rgba(170, 170, 170, 0.1);
+  vertical-align: middle;
 }
-/* line 145, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .focus-capture.active {
-  background-color: #285130;
+/* line 206, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow .for-icon {
+  display: table-cell;
+  vertical-align: middle;
 }
-/* line 152, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow .for-icon .icon {
+  width: 100%;
+  color: rgba(199, 228, 205, 0.5);
+}
+/* line 214, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow.left {
+  left: 0;
+}
+/* line 217, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow.right {
+  right: 0;
+}
+/* line 223, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  margin-left: 20%;
+  height: 5px;
+  margin-top: -5%;
+  z-index: 11;
+}
+/* line 232, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots .dot {
+  width: 100%;
+  background-color: rgba(199, 228, 205, 0.3);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 237, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots .dot.active {
+  background-color: #c7e4cd;
+}
+/* line 244, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context hr {
   margin-top: 0;
   margin-bottom: 0;
-  width: 90%;
+  width: 100%;
   border-color: #83c290;
 }
-/* line 159, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer {
   width: 100%;
   height: 4.5rem;
   padding-top: 1rem;
 }
-/* line 164, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer div.price {
   float: right;
   font-size: 1.5rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
 }
-/* line 171, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer button {
   float: left;
   background-color: #060d08;

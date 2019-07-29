@@ -41,9 +41,6 @@ class ElyaCatalogItem extends React.Component {
         else {
             let images = this.props.item.images;
             let id = this.props.item.name;
-            let sliderState = {
-                selectedImgSpring: spring(this.state.selectedImage)
-            }
             const swipeConfig = {
                 onSwipedLeft: (eventData) => this.switchImg(1),
                 onSwipedRight: (eventData) => this.switchImg(-1),
@@ -54,55 +51,63 @@ class ElyaCatalogItem extends React.Component {
             return <div className="elyaCatalogItem col-6 col-lg-4">
                 <div className="context">
                     <Swipeable {...swipeConfig}>
-                        <Motion style={sliderState}>
+                        <Motion style={{selectedImgSpring: spring(this.state.selectedImage)}}>
                             {({selectedImgSpring}) =>
-                                    <div className="img-container" onClick={this.onClick} onMouseDown={this.onMouseDown}
-                                        onMouseOver={() => this.setState({...this.state, showSliderArrows: true})}
-                                        onMouseLeave={() => this.setState({...this.state, showSliderArrows: false})}
+                                <div className="img-container" onClick={this.onClick} onMouseDown={this.onMouseDown}
+                                    onMouseOver={() => this.setState({...this.state, showSliderArrows: true})}
+                                    onMouseLeave={() => this.setState({...this.state, showSliderArrows: false})}
+                                >
+                                    {/*Непосредсвенно сами изображения, стоят бок-о-бок, в зоне видимости только selectedImage*/}
+                                    {images.map((img, index) =>
+                                        <div className="img" id={id + index} style={{
+                                            backgroundImage: `url("${img}")`,
+                                            left: `${(index - selectedImgSpring) * 100}%`
+                                        }}
+                                        />
+                                    )}
+
+                                    {/*Стрелки для переключения слайдов*/}
+                                    <CSSTransition
+                                        in={this.state.showSliderArrows}
+                                        // unmountOnExit="true"
+                                        timeout={300}
+                                        classNames="slider-arrows"
                                     >
-                                        {images.map((img, index) =>
-                                            <div className="img" id={id + index} style={{
-                                                backgroundImage: `url("${img}")`,
-                                                //selectedImage будет отрисовываться поверх других изображений
-                                                // zIndex: `${index === this.state.selectedImage ? 10 : 1}`,
-                                                left: `${(index - selectedImgSpring) * 100}%`
-                                            }}
-                                            />
-                                        )}
-                                        <CSSTransition
-                                            in={this.state.showSliderArrows}
-                                            // unmountOnExit="true"
-                                            timeout={300}
-                                            classNames="slider-arrows"
-                                        >
-                                            <div className="slider-arrows">
-                                                {sliderArrows.map((dir) =>
-                                                    <div className={`arrow ${dir}`}
-                                                         onTouchStart = {() => {
-                                                             // при обнаружении касания пальцем(что означает использование мобильного устройства) -
-                                                             // - делаем стрелки невидимыми.
-                                                             // Стрелки будут отображаться только
-                                                             // на десктопах и только при наведении указателя мыши на слайдер.
-                                                             console.log("Mobile touch detected");
-                                                             let arr = document.getElementsByClassName("slider-arrows");
-                                                             for (let i = 0; i < arr.length; i++)
-                                                                 arr[i].className += " mobile";
-                                                         }}
-                                                         onClick={(e) => {
-                                                             if (this.state.showSliderArrows) {
-                                                                 this.switchImg(dir === "left"? -1: 1);
-                                                                 e.stopPropagation();
-                                                             }
-                                                         }}
-                                                    >
-                                                        <div className="for-icon">
-                                                            <i className={`icon fa fa-arrow-${dir} fa-fw`}></i>
-                                                        </div>
+                                        {/* Стрелки будут отображаться только на десктопах и только при наведении указателя мыши на слайдер. */}
+                                        <div className="slider-arrows">
+                                            {sliderArrows.map((dir) =>
+                                                <div className={`arrow ${dir}`}
+                                                     onTouchStart = {() => {
+                                                         // при обнаружении касания пальцем(что означает использование мобильного устройства) -
+                                                         // - делаем стрелки невидимыми.
+                                                         console.log("Mobile touch detected");
+                                                         let arr = document.getElementsByClassName("slider-arrows");
+                                                         for (let i = 0; i < arr.length; i++)
+                                                             arr[i].className += " mobile";
+                                                     }}
+                                                     onClick={(e) => {
+                                                         // при клике на стрелку меняем слайд
+                                                         if (this.state.showSliderArrows) {
+                                                             this.switchImg(dir === "left"? -1: 1);
+                                                             e.stopPropagation();
+                                                         }
+                                                     }}
+                                                >
+                                                    <div className="for-icon">
+                                                        <i className={`icon fa fa-arrow-${dir} fa-fw`}></i>
                                                     </div>
-                                                )}
-                                            </div>
-                                        </CSSTransition>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </CSSTransition>
+
+                                    {/*Полоски(точки) слайдера - показывают сколько всего изображений, и которое из них сейчас выделено*/}
+                                    <div className="slider-dots">
+                                        {images.map((img, idx) =>
+                                            <div className={`dot${idx === this.state.selectedImage ? " active" : ""}`}/>
+                                        )}
                                     </div>
+                                </div>
                             }
                         </Motion>
                     </Swipeable>

@@ -167,6 +167,10 @@ a {
               }
 
               .slider-arrows {
+                &.mobile {
+                  pointer-events: none;
+                  display: none;
+                }
                 z-index: 11;
                 @include opacity(0);
                 transition: opacity 300ms;

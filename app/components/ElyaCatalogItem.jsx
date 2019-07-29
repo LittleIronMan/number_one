@@ -35,7 +35,6 @@ class ElyaCatalogItem extends React.Component {
         this.setState({...this.state, selectedImage: newIdx});
     }
     render() {
-        console.log("Render item, showSliderArrows = ", this.state.showSliderArrows);
         if (this.state.redirect) {
             return <Redirect push to={`/product/${this.props.item.name}`} />;
         }
@@ -58,8 +57,8 @@ class ElyaCatalogItem extends React.Component {
                         <Motion style={sliderState}>
                             {({selectedImgSpring}) =>
                                     <div className="img-container" onClick={this.onClick} onMouseDown={this.onMouseDown}
-                                        onMouseOver={() => { console.log("onMouseOver"); this.setState({...this.state, showSliderArrows: true})}}
-                                        onMouseLeave={() => { console.log("onMouseLeave"); this.setState({...this.state, showSliderArrows: false})}}
+                                        onMouseOver={() => this.setState({...this.state, showSliderArrows: true})}
+                                        onMouseLeave={() => this.setState({...this.state, showSliderArrows: false})}
                                     >
                                         {images.map((img, index) =>
                                             <div className="img" id={id + index} style={{
@@ -79,9 +78,19 @@ class ElyaCatalogItem extends React.Component {
                                             <div className="slider-arrows">
                                                 {sliderArrows.map((dir) =>
                                                     <div className={`arrow ${dir}`}
+                                                         onTouchStart = {() => {
+                                                             // при обнаружении касания пальцем(что означает использование мобильного устройства) -
+                                                             // - делаем стрелки невидимыми.
+                                                             // Стрелки будут отображаться только
+                                                             // на десктопах и только при наведении указателя мыши на слайдер.
+                                                             console.log("Mobile touch detected");
+                                                             let arr = document.getElementsByClassName("slider-arrows");
+                                                             for (let i = 0; i < arr.length; i++)
+                                                                 arr[i].className += " mobile";
+                                                         }}
                                                          onClick={(e) => {
                                                              if (this.state.showSliderArrows) {
-                                                                 this.switchImg(-1);
+                                                                 this.switchImg(dir === "left"? -1: 1);
                                                                  e.stopPropagation();
                                                              }
                                                          }}

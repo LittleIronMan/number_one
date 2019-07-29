@@ -126,9 +126,7 @@ class ElyaMenu extends React.Component {
                     {({rotate}) =>
                         <div className="menu-button" onClick={this.toggleMenu}
                              style={{transform: `rotate(${rotate}deg)`}}>
-                            <div className="for-icon">
-                                <i className="fa fa-bars fa-fw"/>
-                            </div>
+                            <i className="fa fa-bars fa-fw"/>
                         </div>
                     }
                 </Motion>

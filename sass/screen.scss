@@ -57,15 +57,13 @@ a {
       height: 2em; // захардкожен в ElyaMenu.jsx
       top: 0.5em; // захардкожен в ElyaMenu.jsx
       left: 0.5em; // захардкожен в ElyaMenu.jsx
-      display: table;
       font-size: 1em;
       border-radius: 1em;
-      .for-icon {
-        display: table-cell;
-        vertical-align: middle;
-        i {
-          width: 100%;
-        }
+      i {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); // выравнивание по вертикали
+        width: 100%;
       }
     }
     .menu-item {
@@ -196,20 +194,18 @@ a {
                 }
                 // стрелки переключения картинок в слайдере
                 .arrow {
-                  display: table;
                   position: absolute;
                   width: 15%;
                   $arrowHeight: 15%;
                   height: 100%;
                   background-color: rgba(#aaaaaa, 0.1);
                   vertical-align: middle;
-                  .for-icon {
-                    display: table-cell;
-                    vertical-align: middle;
-                    .icon {
-                      width: 100%;
-                      color: rgba($mainTextColor, 0.5);
-                    }
+                  .icon {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%); // выравнивание по вертикали
+                    width: 100%;
+                    color: rgba($mainTextColor, 0.5);
                   }
                   &.left {
                     left: 0;

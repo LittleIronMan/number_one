@@ -86,7 +86,9 @@ class ElyaCatalogItem extends React.Component {
                                                              }
                                                          }}
                                                     >
-                                                        <i className={`icon fa fa-arrow-${dir} fa-fw`}></i>
+                                                        <div className="for-icon">
+                                                            <i className={`icon fa fa-arrow-${dir} fa-fw`}></i>
+                                                        </div>
                                                     </div>
                                                 )}
                                             </div>

@@ -40,10 +40,10 @@ a {
   //font-size: 1em;
   background-color: $mainColor;
   color: $mainTextColor;
-  div.elya-menu {
+  .elya-menu {
     $menuFontSize: 4vh;
     font-size: $menuFontSize;
-    div.menu-button, div.menu-item {
+    .menu-button, div.menu-item {
       position: absolute;
       z-index: 20;
       background-color: rgba(#313131, 0.7);
@@ -52,19 +52,23 @@ a {
       border-width: 2px;
       border-color: $mainTextColor;
     }
-    div.menu-button {
-      font-size: 1em;
-      border-radius: 1em;
+    .menu-button {
       width: 2em; // захардкожен в ElyaMenu.jsx
       height: 2em; // захардкожен в ElyaMenu.jsx
       top: 0.5em; // захардкожен в ElyaMenu.jsx
       left: 0.5em; // захардкожен в ElyaMenu.jsx
-      i {
-        margin-top: 0.5em;
-        margin-left: 0.55em;
+      display: table;
+      font-size: 1em;
+      border-radius: 1em;
+      .for-icon {
+        display: table-cell;
+        vertical-align: middle;
+        i {
+          width: 100%;
+        }
       }
     }
-    div.menu-item {
+    .menu-item {
       height: 1.5em;
       line-height: 1.5em;
       padding-left: 0.4em;
@@ -188,13 +192,20 @@ a {
                 }
                 // стрелки переключения картинок в слайдере
                 .arrow {
+                  display: table;
                   position: absolute;
                   width: 15%;
                   $arrowHeight: 15%;
-                  height: 40%;
-                  background-color: rgba(#aaaaaa, 0.5);
-                  .icon {
-                    width: 100%;
+                  height: 100%;
+                  background-color: rgba(#aaaaaa, 0.1);
+                  vertical-align: middle;
+                  .for-icon {
+                    display: table-cell;
+                    vertical-align: middle;
+                    .icon {
+                      width: 100%;
+                      color: rgba($mainTextColor, 0.5);
+                    }
                   }
                   &.left {
                     left: 0;

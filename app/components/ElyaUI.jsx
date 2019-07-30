@@ -1,4 +1,5 @@
 var React = require('react');
+var {ElyaCart} = require('./ElyaIcons.jsx');
 
 class ElyaNavbar extends React.Component {
     render() {
@@ -8,7 +9,9 @@ class ElyaNavbar extends React.Component {
                 <div className="logo col"/>
                 <div className="unused col"></div>
                 <div className="cart col">
-                    <i className="icon fa fa-shopping-cart"/>
+                    <ElyaCart/>
+                    {/*<img src="/icons/cart_outline.svg" alt="" className="icon"/>*/}
+                    {/*<i className="icon fa fa-shopping-cart"/>*/}
                 </div>
                 <div className="e-mail col">
                     <i className="icon fa fa-envelope"/>

@@ -92,11 +92,16 @@ a {
       height: $logoHeight;
       top: ($navbarHeight - $logoHeight)/2;
     }
-    .cart, .e-mail {
+    .cart, .other-icons {
+      max-width: calc(30px + #{0.8*$navbarHeight});
+    }
+    .e-mail {
+      max-width: calc(30px + #{0.5*$navbarHeight});
+    }
+    .cart, .e-mail, .other-icons {
       text-align: center;
       //height: $logoHeight;
       height: $navbarHeight;
-      max-width: calc(30px + #{0.8*$navbarHeight});
       .icon {
         //height: 100px;
         //width: 100px;

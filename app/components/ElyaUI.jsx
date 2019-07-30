@@ -20,6 +20,9 @@ class ElyaNavbar extends React.Component {
                     <Icon.instagram/>
                 </div>
                 <div className="other-icons col">
+                    <Icon.instagram2/>
+                </div>
+                <div className="other-icons col">
                     <Icon.youtube/>
                 </div>
                 <div className="other-icons col">
@@ -33,6 +36,21 @@ class ElyaNavbar extends React.Component {
                 </div>
                 <div className="other-icons col">
                     <Icon.apple/>
+                </div>
+                <div className="other-icons col">
+                    <Icon.ebay/>
+                </div>
+                <div className="other-icons col">
+                    <Icon.etsy/>
+                </div>
+                <div className="other-icons col">
+                    <Icon.left/>
+                </div>
+                <div className="other-icons col">
+                    <Icon.leftShort/>
+                </div>
+                <div className="other-icons col">
+                    <Icon.hamburger/>
                 </div>
             </div>
         </div>;

@@ -59,11 +59,13 @@ a {
       left: 0.5em; // захардкожен в ElyaMenu.jsx
       font-size: 1em;
       border-radius: 1em;
-      i {
+      .icon {
         position: relative;
+        width: 50%;
         top: 50%;
         transform: translateY(-50%); // выравнивание по вертикали
-        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
     .menu-item {
@@ -252,8 +254,10 @@ a {
                       position: relative;
                       top: 50%;
                       transform: translateY(-50%); // выравнивание по вертикали
-                      width: 100%;
+                      width: 60%;
                       color: rgba($mainTextColor, 0.5);
+                      margin-left: auto;
+                      margin-right: auto;
                     }
 
                     &.left {

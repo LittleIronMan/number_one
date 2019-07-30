@@ -4,6 +4,7 @@ var {Redirect} = require('react-router-dom');
 var {Motion, spring} = require('react-motion');
 var {Swipeable} = require('react-swipeable');
 var CSSTransition = require('react-transition-group').CSSTransition;
+var Icon = require('./ElyaIcons.jsx');
 
 // var styles = require('../../stylesheets/screen.css');
 
@@ -91,7 +92,7 @@ class ElyaCatalogItem extends React.Component {
                                                  }
                                              }}
                                         >
-                                            <i className={`icon fa fa-arrow-${dir} fa-fw`}></i>
+                                            <Icon.leftShort mirror={dir === "right"}/>
                                         </div>
                                     )}
                                 </div>

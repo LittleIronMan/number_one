@@ -2,6 +2,7 @@
 var React = require('react');
 var {Motion, StaggeredMotion, spring} = require('react-motion');
 const Link = require("react-router-dom").Link;
+var Icon = require("./ElyaIcons.jsx");
 
 // Эти данные заданы в css, скопируй их оттуда
 const M_X = 0.5;
@@ -126,7 +127,7 @@ class ElyaMenu extends React.Component {
                     {({rotate}) =>
                         <div className="menu-button" onClick={this.toggleMenu}
                              style={{transform: `rotate(${rotate}deg)`}}>
-                            <i className="fa fa-bars fa-fw"/>
+                            <Icon.hamburger/>
                         </div>
                     }
                 </Motion>

@@ -57,11 +57,7 @@ class ElyaCatalogItem extends React.Component {
                                 {({selectedImgSpring}) =>
                                     <div className="slider-img">
                                         {images.map((img, index) =>
-                                            <div className="img" id={id + index} style={{
-                                                backgroundImage: `url("${img}")`,
-                                                left: `${(index - selectedImgSpring) * 100}%`
-                                            }}
-                                            />
+                                            <img className="img" src={`./${img}`} style={{ left: `${(index - selectedImgSpring) * 100}%` }}/>
                                         )}
                                     </div>}
                             </Motion>

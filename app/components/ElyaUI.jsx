@@ -13,44 +13,29 @@ class ElyaNavbar extends React.Component {
                     {/*<img src="/icons/cart_outline.svg" alt="" className="icon"/>*/}
                     {/*<i className="icon fa fa-shopping-cart"/>*/}
                 </div>
+                <div className="cart col">
+                    <Icon.cart2/>
+                </div>
                 <div className="e-mail col">
                     <Icon.email/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.instagram/>
+                    <Icon.android/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.instagram2/>
+                    <Icon.googlePlay/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.youtube/>
+                    <Icon.appStore/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.vk/>
+                    <Icon.share/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.youtubePlay/>
+                    <Icon.xInRound/>
                 </div>
                 <div className="other-icons col">
-                    <Icon.facebook/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.apple/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.ebay/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.etsy/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.left/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.leftShort/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.hamburger/>
+                    <Icon.x/>
                 </div>
             </div>
         </div>;
@@ -120,7 +105,9 @@ class ElyaTitleYoutube extends React.Component {
         return <div className="elyaVideo">
             {/*Youtube video*/}
             <div className={`${this.state.userClicked ? "stub-youtube" : "youtube-preview"}`} onClick={this.onClick}>
-                {this.state.userClicked ? null : <i className="fa fa-play-circle"/> /* иконка play у превьюшки */}
+                {this.state.userClicked ? null :
+                    <Icon.youtubePlay/> /* иконка play у превьюшки */
+                }
             </div>
             <div id="elyaVideoPlayer" className="youtube"/>
             {/*<iframe*/}

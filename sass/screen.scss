@@ -135,12 +135,13 @@ a {
       background-image: url("../img/youtube-no-logo.jpg");
       background-size: cover;
       background-position: center;
-      text-align: center;
-      i.fa-play-circle {
-        margin-top: 25%;
-        font-size: 3rem;
+      .icon {
+        width: 4rem;
         color: rgba($mainTextColor, 0.75);
         pointer-events:none;
+        margin-top: 25%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
     .stub-youtube { // прозрачный контейнер над видео

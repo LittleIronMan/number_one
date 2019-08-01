@@ -19,24 +19,24 @@ class ElyaNavbar extends React.Component {
                 <div className="e-mail col">
                     <Icon.email/>
                 </div>
-                <div className="other-icons col">
-                    <Icon.android/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.googlePlay/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.appStore/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.share/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.xInRound/>
-                </div>
-                <div className="other-icons col">
-                    <Icon.x/>
-                </div>
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.android/>*/}
+                {/*</div>*/}
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.googlePlay/>*/}
+                {/*</div>*/}
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.appStore/>*/}
+                {/*</div>*/}
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.share/>*/}
+                {/*</div>*/}
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.xInRound/>*/}
+                {/*</div>*/}
+                {/*<div className="other-icons col">*/}
+                {/*    <Icon.x/>*/}
+                {/*</div>*/}
             </div>
         </div>;
     }

@@ -247,7 +247,7 @@ a {
                     $arrowHeight: 15%;
                     height: 100%;
                     background-color: rgba(#aaaaaa, 0);
-                    vertical-align: middle;
+                    //vertical-align: middle;
 
                     .icon {
                       position: relative;
@@ -326,6 +326,32 @@ a {
               }
             }
           }
+        }
+      }
+    }
+  }
+  &ItemFull {
+    .images {
+      .thumbs {
+        position: relative;
+        height: $mainContextHeight;
+        .wrapper {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          img {
+            max-width: calc(100% - 15px);
+          }
+        }
+      }
+      .img-main {
+        position: relative;
+        height: $mainContextHeight;
+        img {
+          max-width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
     }

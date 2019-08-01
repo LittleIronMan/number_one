@@ -15,13 +15,15 @@ class ElyaItemFull extends React.Component {
             <div className="row">
                 <div className="images col-12 col-lg-9">
                     <div className="row">
-                        <div className="d-none d-lg-block col-lg-3 thumbs">
-                            <div className="wrapper">
-                                {images.map((img, idx) =>
-                                    <div className="img-box" style={{maxWidth: `${oneImgHeight}vh`}}>
-                                        <img src={img} alt=""/>
-                                    </div>
-                                )}
+                        <div className="d-none d-lg-block col-lg thumbs">
+                            <div className="wrapper-center" style={{minWidth: `${oneImgHeight}vh`}}>
+                                <div className="wrapper-flex">
+                                    {images.map((img, idx) =>
+                                        <div className="img-box" style={{maxWidth: `${oneImgHeight}vh`}}>
+                                            <img src={img} alt=""/>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                         <div className="col-12 col-lg-9 img-main">

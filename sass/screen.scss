@@ -334,28 +334,32 @@ a {
   &ItemFull {
     .images {
       .thumbs {
-        height: $mainContextHeight;
-        .wrapper {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          .img-box {
-            overflow: hidden;
-            //background-color: tomato;
-            position: relative;
-            //padding-bottom: 100%;
-            img {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              z-index: 1;
+        text-align: center;
+        .wrapper-center {
+          display: inline-block;
+          height: $mainContextHeight;
+          text-align: initial;
+          .wrapper-flex {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .img-box {
+              overflow: hidden;
+              position: relative;
+              padding: 2px;
+              img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+              }
             }
-          }
-          .img-box:before {
-            content: "";
-            float:left;
-            padding-bottom:100%;
+            .img-box:before {
+              content: "";
+              float: left;
+              padding-bottom: 100%;
+            }
           }
         }
       }

@@ -1,6 +1,7 @@
 var React = require('react');
 var ElyaMenu = require('./components/ElyaMenu.jsx');
 var {ElyaNavbar, ElyaFooter} = require('./components/ElyaUI.jsx');
+var cssVariables = require('../sass/variables.scss').locals;
 
 class ElyaItemFull extends React.Component {
     constructor(props) {

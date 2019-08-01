@@ -6,6 +6,7 @@
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@import "variables.scss";
 
 html { font-size: calc(1em + 1vw); }
 
@@ -14,8 +15,6 @@ html { font-size: calc(1em + 1vw); }
   //filter: alpha(opacity=#{$opacity * 100});
 }
 
-$mainColor: #172f1c;
-$mainTextColor: lighten($mainColor, 70%);
 a {
   outline: none;
   text-decoration: none;
@@ -78,7 +77,6 @@ a {
   &Navbar {
     width: 100%;
     //background-color: #b5f571;
-    $navbarHeight: 12vh;
     $logoHeight: $navbarHeight*0.8;
     height: $navbarHeight;
     .menu-button {

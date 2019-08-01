@@ -16,6 +16,15 @@ module.exports = {
                 options:{
                     presets:["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
                 }
+            },
+            {
+                test: /\.(scss|sass)$/i,
+                include: [
+                    // path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'sass'),
+                ],
+                loaders: ["css-loader", "sass-loader"]
+                // loaders: ["sass-loader"]
             }
         ]
     },

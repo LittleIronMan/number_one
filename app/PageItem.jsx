@@ -2,6 +2,7 @@ var React = require('react');
 var ElyaMenu = require('./components/ElyaMenu.jsx');
 var {ElyaNavbar, ElyaFooter} = require('./components/ElyaUI.jsx');
 var cssVariables = require('../sass/variables.scss').locals;
+var Icon = require("./components/ElyaIcons.jsx");
 
 class ElyaItemFull extends React.Component {
     constructor(props) {
@@ -27,9 +28,15 @@ class ElyaItemFull extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="description col-12 col-lg-3">
-                    description
-                    Product Page for "{this.props.item.name}"
+                <div className="item-info col-12 col-lg-3">
+                    <h1 className="name">{this.props.item.name}</h1>
+                    <h1 className="price">{this.props.item.price}</h1>
+                    <h1 className="free-shiping">Free shipping</h1>
+                    <button className="add-to-cart">Add to cart</button>
+                    <p className="materials">{this.props.item.materials}</p>
+                    <p className="handmade"><Icon.handmade/></p>
+                    <p className="description">{this.props.item.description}</p>
+                    <p className="package-shipping"></p>
                 </div>
             </div>
             <div className="row">

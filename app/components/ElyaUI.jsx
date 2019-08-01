@@ -13,9 +13,9 @@ class ElyaNavbar extends React.Component {
                     {/*<img src="/icons/cart_outline.svg" alt="" className="icon"/>*/}
                     {/*<i className="icon fa fa-shopping-cart"/>*/}
                 </div>
-                <div className="cart col">
-                    <Icon.cart2/>
-                </div>
+                {/*<div className="cart col">*/}
+                {/*    <Icon.cart2/>*/}
+                {/*</div>*/}
                 <div className="e-mail col">
                     <Icon.email/>
                 </div>

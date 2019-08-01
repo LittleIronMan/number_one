@@ -333,13 +333,12 @@ a {
   &ItemFull {
     .images {
       .thumbs {
-        position: relative;
         height: $mainContextHeight;
         .wrapper {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
+          height: 100%;
+          text-align: center;
           img {
+            display: inline-block;
             max-width: calc(100% - 15px);
           }
         }
@@ -348,10 +347,12 @@ a {
         position: relative;
         height: $mainContextHeight;
         img {
-          max-width: 100%;
           position: absolute;
+          max-width: calc(100% - 30px);
+          max-height: 100%;
           top: 50%;
-          transform: translateY(-50%);
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }

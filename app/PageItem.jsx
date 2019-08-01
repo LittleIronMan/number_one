@@ -9,7 +9,7 @@ class ElyaItemFull extends React.Component {
     }
     render() {
         let images = this.props.item.images;
-        let oneImgHeight = parseInt(cssVariables.mainContextHeight)/images.length;
+        let oneImgHeight = 100/images.length;
         return <div className="elyaItemFull container-fluid">
             <div className="row">
                 <div className="images col-12 col-lg-9">
@@ -17,7 +17,7 @@ class ElyaItemFull extends React.Component {
                         <div className="d-none d-lg-block col-lg-3 thumbs">
                             <div className="wrapper">
                                 {images.map((img, idx) =>
-                                    <img src={img} alt="" style={{maxHeight: `${oneImgHeight}vh`}}/>
+                                    <img src={img} alt="" style={{maxHeight: `${oneImgHeight}%`}}/>
                                     )
                                 }
                             </div>

@@ -13,10 +13,10 @@ class ElyaItemFull extends React.Component {
         let oneImgHeight = parseInt(cssVariables.mainContextHeight)/images.length;
         return <div className="elyaItemFull container-fluid">
             <div className="row">
-                <div className="images col-12 col-lg-9">
+                <div className="images col-12 col-lg-8">
                     <div className="row">
-                        <div className="d-none d-lg-block col-lg thumbs">
-                            <div className="wrapper-center" style={{minWidth: `${oneImgHeight}vh`}}>
+                        <div className="d-none d-lg-block col-lg-2 thumbs">
+                            <div className="wrapper-center" style={{width: `${oneImgHeight}vh`}}>
                                 <div className="wrapper-flex">
                                     {images.map((img, idx) =>
                                         <div className="img-box" style={{maxWidth: `${oneImgHeight}vh`}}>
@@ -26,15 +26,17 @@ class ElyaItemFull extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-12 col-lg-9 img-main">
+                        <div className="col-12 col-lg-10 img-main">
                             <img src={images[0]} alt=""/>
                         </div>
                     </div>
                 </div>
-                <div className="item-info col-12 col-lg-3">
+                <div className="item-info col-12 col-lg-4">
                     <h1 className="name">{this.props.item.name}</h1>
                     <h1 className="price">{this.props.item.price}</h1>
-                    <h1 className="free-shiping">Free shipping</h1>
+                    <p className="free-shipping">
+                        <p className="right-align">Free shipping</p>
+                    </p>
                     <button className="add-to-cart">Add to cart</button>
                     <p className="materials">{this.props.item.materials}</p>
                     <p className="handmade"><Icon.handmade/></p>

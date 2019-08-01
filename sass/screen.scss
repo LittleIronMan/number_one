@@ -337,10 +337,25 @@ a {
         height: $mainContextHeight;
         .wrapper {
           height: 100%;
-          text-align: center;
-          img {
-            display: inline-block;
-            max-width: calc(100% - 15px);
+          display: flex;
+          flex-direction: column;
+          .img-box {
+            overflow: hidden;
+            //background-color: tomato;
+            position: relative;
+            //padding-bottom: 100%;
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              z-index: 1;
+            }
+          }
+          .img-box:before {
+            content: "";
+            float:left;
+            padding-bottom:100%;
           }
         }
       }

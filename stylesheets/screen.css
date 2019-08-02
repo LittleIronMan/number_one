@@ -3,8 +3,8 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
-/* line 5, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap");
+/* line 5, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,136 +26,202 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../Vim/ruby233/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 10, ../sass/screen.scss */
+/* line 14, ../sass/variables.scss */
+:export {
+  mainColor: #103819;
+  mainTextColor: #e8f8eb;
+  navbarHeight: 12vh;
+  mainContextHeight: 72vh;
+  menuBtnHeight: 2em;
+  menuBtnTop: 0.5em;
+  menuBtnLeft: 0.5em;
+  menuItemHeight: 3em;
+}
+
+/* line 18, ../sass/screen.scss */
 html {
   font-size: calc(1em + 1vw);
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 a {
   outline: none;
   text-decoration: none;
-  color: #c7e4cd;
+  color: #e8f8eb;
 }
-/* line 23, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 a:focus {
-  color: #c7e4cd;
+  color: #e8f8eb;
 }
-/* line 26, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 a:link, a:visited {
-  color: #c7e4cd;
+  color: #e8f8eb;
 }
-/* line 29, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 a:hover {
   color: white;
 }
-/* line 32, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 a:active {
   color: white;
 }
 
-/* line 37, ../sass/screen.scss */
-.elya {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #172f1c;
-  color: #c7e4cd;
-}
 /* line 43, ../sass/screen.scss */
-.elya .elya-menu {
-  font-size: 4vh;
+hr {
+  border-style: solid;
+  border-color: rgba(232, 248, 235, 0.5);
+  border-width: 0.5px;
 }
-/* line 46, ../sass/screen.scss */
-.elya .elya-menu .menu-button, .elya .elya-menu div.menu-item {
+
+/* line 49, ../sass/screen.scss */
+.elya {
+  font-family: 'Libre Baskerville', serif;
+  background-color: #103819;
+  color: #e8f8eb;
+}
+/* line 56, ../sass/screen.scss */
+.elyaMenu {
+  font-size: 4vh;
+  font-family: "Nanum Myeongjo", serif;
+}
+/* line 60, ../sass/screen.scss */
+.elyaMenu .menu-button, .elyaMenu div.menu-item {
   position: absolute;
   z-index: 20;
-  background-color: rgba(49, 49, 49, 0.7);
   border-style: solid;
-  border-radius: 10px;
-  border-width: 2px;
-  border-color: #c7e4cd;
+  border-width: 0.5px;
+  border-color: rgba(232, 248, 235, 0.5);
 }
-/* line 55, ../sass/screen.scss */
-.elya .elya-menu .menu-button {
+/* line 67, ../sass/screen.scss */
+.elyaMenu .menu-button {
   width: 2em;
   height: 2em;
   top: 0.5em;
   left: 0.5em;
-  display: table;
   font-size: 1em;
   border-radius: 1em;
 }
-/* line 63, ../sass/screen.scss */
-.elya .elya-menu .menu-button .for-icon {
-  display: table-cell;
-  vertical-align: middle;
+/* line 74, ../sass/screen.scss */
+.elyaMenu .menu-button .icon {
+  color: rgba(232, 248, 235, 0.5);
+  position: relative;
+  width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 66, ../sass/screen.scss */
-.elya .elya-menu .menu-button .for-icon i {
-  width: 100%;
+/* line 84, ../sass/screen.scss */
+.elyaMenu .menu-item {
+  height: 2.5em;
+  line-height: 2.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  border-radius: 0.625em;
+  background-color: rgba(49, 49, 49, 0.7);
 }
-/* line 71, ../sass/screen.scss */
-.elya .elya-menu .menu-item {
-  height: 1.5em;
-  line-height: 1.5em;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-}
-/* line 78, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .elyaNavbar {
   width: 100%;
   height: 12vh;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: #0a2410;
 }
-/* line 83, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
+.elyaNavbar .menu-button {
+  max-width: 12vh;
+}
+/* line 105, ../sass/screen.scss */
+.elyaNavbar .logo {
+  position: relative;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../img/logo.png");
+  width: 15.36vh;
+  height: 9.6vh;
+  top: 1.2vh;
+}
+/* line 115, ../sass/screen.scss */
+.elyaNavbar .cart, .elyaNavbar .other-icons {
+  max-width: calc(30px + 9.6vh);
+}
+/* line 118, ../sass/screen.scss */
+.elyaNavbar .e-mail {
+  max-width: calc(30px + 6vh);
+}
+/* line 121, ../sass/screen.scss */
+.elyaNavbar .cart, .elyaNavbar .e-mail, .elyaNavbar .other-icons {
+  text-align: center;
+  height: 12vh;
+}
+/* line 125, ../sass/screen.scss */
+.elyaNavbar .cart .icon, .elyaNavbar .e-mail .icon, .elyaNavbar .other-icons .icon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* line 133, ../sass/screen.scss */
+.elyaNavbar hr {
+  display: none;
+  position: absolute;
+  width: 100%;
+  margin: 0 0 0 -15px;
+  border-color: rgba(232, 248, 235, 0.5);
+}
+/* line 141, ../sass/screen.scss */
 .elyaVideo {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
+  margin-top: -1rem;
 }
-/* line 91, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .elyaVideo .youtube, .elyaVideo .stub-youtube, .elyaVideo .youtube-preview {
   position: absolute;
   top: 0;
@@ -163,195 +229,349 @@ a:active {
   width: 100%;
   height: 100%;
 }
-/* line 98, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .elyaVideo .youtube-preview, .elyaVideo .stub-youtube {
   z-index: 1;
 }
-/* line 101, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .elyaVideo .youtube-preview {
-  background-image: url("../img/youtube.jpg");
+  background-image: url("../img/youtube-no-logo.jpg");
   background-size: cover;
   background-position: center;
-  text-align: center;
 }
-/* line 106, ../sass/screen.scss */
-.elyaVideo .youtube-preview i.fa-play-circle {
-  margin-top: 25%;
-  font-size: 3rem;
-  color: rgba(199, 228, 205, 0.75);
+/* line 164, ../sass/screen.scss */
+.elyaVideo .youtube-preview .icon {
+  width: 4rem;
+  color: rgba(232, 248, 235, 0.75);
   pointer-events: none;
+  margin-top: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 113, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .elyaVideo .stub-youtube {
-  background-color: rgba(23, 47, 28, 0);
+  background-color: rgba(16, 56, 25, 0);
 }
-/* line 117, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .elyaCatalog {
   width: 100%;
-  background-color: #1a3620;
+  background-color: #12401d;
   height: 800px;
 }
-/* line 122, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 .elyaFooter {
   width: 100%;
-  background-color: #142818;
+  background-color: #0e3015;
   height: 800px;
 }
-/* line 127, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 .elyaCatalogWrapper {
   padding: 10px;
 }
-/* line 131, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row:hover {
-  opacity: 1.0;
+/* line 191, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .catalog-title {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-family: "Nanum Myeongjo", serif;
 }
-/* line 134, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem {
   padding: 10px;
 }
-/* line 137, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context {
   width: 100%;
   border-style: solid;
-  border-radius: 10px;
+  border-radius: 1rem;
   border-width: 1px;
-  border-color: #83c290;
+  border-color: rgba(232, 248, 235, 0.5);
   overflow: hidden;
 }
-/* line 147, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container {
+/* line 210, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider {
   position: relative;
+}
+/* line 214, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-img, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows {
   width: 100%;
-  padding-top: 95%;
-  height: 0;
+  padding-bottom: 95%;
+}
+/* line 220, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-img {
+  position: relative;
   overflow: hidden;
 }
-/* line 155, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .img, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows {
+/* line 224, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-img .img {
   position: absolute;
   width: 100%;
   height: 100%;
-  margin-top: -95%;
-}
-/* line 162, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .img {
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   z-index: 10;
 }
-/* line 169, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows {
-  z-index: 11;
+/* line 233, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows {
+  position: absolute;
+  top: 0;
   opacity: 0;
   transition: opacity 300ms;
+  z-index: 11;
 }
-/* line 170, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows.mobile {
+/* line 241, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows.mobile {
   pointer-events: none;
   display: none;
 }
-/* line 177, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear {
+/* line 246, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-enter, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-appear {
   opacity: 0;
 }
-/* line 179, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter-done, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear-done {
+/* line 249, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-enter-done, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-appear-done {
   opacity: 1;
 }
-/* line 183, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-enter.slider-arrows-enter-active, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-appear.slider-arrows-appear-active {
+/* line 254, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-enter.slider-arrows-enter-active, .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-appear.slider-arrows-appear-active {
   opacity: 1;
   transition: opacity 300ms;
 }
-/* line 189, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-exit.slider-arrows-exit-active {
+/* line 261, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-exit.slider-arrows-exit-active {
   opacity: 0;
   transition: opacity 300ms;
 }
-/* line 193, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows-exit-done {
+/* line 266, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows-exit-done {
   opacity: 0;
 }
-/* line 198, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow {
-  display: table;
+/* line 272, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows .arrow {
   position: absolute;
   width: 15%;
   height: 100%;
-  background-color: rgba(170, 170, 170, 0.1);
-  vertical-align: middle;
+  background-color: rgba(170, 170, 170, 0);
 }
-/* line 206, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow .for-icon {
-  display: table-cell;
-  vertical-align: middle;
+/* line 280, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows .arrow .icon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  color: rgba(232, 248, 235, 0.5);
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 209, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow .for-icon .icon {
-  width: 100%;
-  color: rgba(199, 228, 205, 0.5);
-}
-/* line 214, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow.left {
+/* line 290, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows .arrow.left {
   left: 0;
 }
-/* line 217, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-arrows .arrow.right {
+/* line 294, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-swipeable .slider-arrows .arrow.right {
   right: 0;
 }
-/* line 223, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots {
+/* line 301, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-dots {
   position: absolute;
   display: flex;
   width: 60%;
   margin-left: 20%;
-  height: 5px;
+  height: 4px;
   margin-top: -5%;
   z-index: 11;
 }
-/* line 232, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots .dot {
+/* line 310, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-dots .dot {
   width: 100%;
-  background-color: rgba(199, 228, 205, 0.3);
-  margin-left: 10px;
-  margin-right: 10px;
+  background-color: rgba(232, 248, 235, 0.3);
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 2px;
 }
-/* line 237, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .img-container .slider-dots .dot.active {
-  background-color: #c7e4cd;
+/* line 316, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .slider .slider-dots .dot.active {
+  background-color: #e8f8eb;
 }
-/* line 244, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context hr {
+/* line 323, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context > hr {
+  display: none;
   margin-top: 0;
   margin-bottom: 0;
   width: 100%;
-  border-color: #83c290;
+  border-color: rgba(232, 248, 235, 0.5);
 }
-/* line 251, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer {
   width: 100%;
   height: 4.5rem;
-  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0a2410;
 }
-/* line 256, ../sass/screen.scss */
-.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer div.price {
-  float: right;
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  padding-top: 0.5rem;
+/* line 339, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer .price {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  text-align: right;
 }
-/* line 263, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
+.elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer .price:before {
+  content: "US ";
+  color: rgba(232, 248, 235, 0.6);
+}
+/* line 349, ../sass/screen.scss */
 .elyaCatalogWrapper .container-fluid .row .elyaCatalogItem .context .footer button {
-  float: left;
-  background-color: #060d08;
-  color: #c7e4cd;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.5rem;
+  background-color: #081c0d;
+  color: #e8f8eb;
+  font-family: inherit;
+  font-size: 1rem;
   height: 2.5rem;
-  padding-right: 1em;
-  padding-left: 1em;
-  margin-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-left: 0.5rem;
   line-height: 2.5rem;
-  border-style: none;
+  border-style: solid;
+  border-color: rgba(232, 248, 235, 0.5);
+  border-width: 0.5px;
   border-radius: 1.25rem;
+}
+/* line 372, ../sass/screen.scss */
+.elyaItemFull .images .thumbs {
+  text-align: center;
+  line-height: 72vh;
+}
+/* line 375, ../sass/screen.scss */
+.elyaItemFull .images .thumbs .wrapper-center {
+  display: inline-block;
+  vertical-align: top;
+  max-height: 72vh;
+  text-align: initial;
+  max-width: 100%;
+}
+/* line 382, ../sass/screen.scss */
+.elyaItemFull .images .thumbs .wrapper-center .wrapper-flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* line 386, ../sass/screen.scss */
+.elyaItemFull .images .thumbs .wrapper-center .wrapper-flex .img-box {
+  overflow: hidden;
+  position: relative;
+  padding: 2px;
+}
+/* line 390, ../sass/screen.scss */
+.elyaItemFull .images .thumbs .wrapper-center .wrapper-flex .img-box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/* line 398, ../sass/screen.scss */
+.elyaItemFull .images .thumbs .wrapper-center .wrapper-flex .img-box:before {
+  content: "";
+  float: left;
+  padding-bottom: 100%;
+}
+/* line 406, ../sass/screen.scss */
+.elyaItemFull .images .img-main {
+  position: relative;
+  height: 72vh;
+}
+/* line 409, ../sass/screen.scss */
+.elyaItemFull .images .img-main img {
+  position: absolute;
+  max-width: calc(100% - 30px);
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 419, ../sass/screen.scss */
+.elyaItemFull .item-info {
+  font-size: 0.75rem;
+}
+/* line 421, ../sass/screen.scss */
+.elyaItemFull .item-info .name {
+  text-align: center;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  background-color: #164c22;
+}
+/* line 431, ../sass/screen.scss */
+.elyaItemFull .item-info .price {
+  font-size: 1rem;
+  text-align: right;
+}
+/* line 434, ../sass/screen.scss */
+.elyaItemFull .item-info .price:before {
+  content: "US ";
+  color: rgba(232, 248, 235, 0.6);
+}
+/* line 439, ../sass/screen.scss */
+.elyaItemFull .item-info .description {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+/* line 443, ../sass/screen.scss */
+.elyaItemFull .item-info ul.materials {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+/* line 446, ../sass/screen.scss */
+.elyaItemFull .item-info ul.materials li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+/* line 451, ../sass/screen.scss */
+.elyaItemFull .item-info hr {
+  width: 100%;
+  margin: 0.5rem auto;
+}
+/* line 455, ../sass/screen.scss */
+.elyaItemFull .item-info button.add-to-cart {
+  background-color: black;
+  font-size: 1rem;
+  font-family: inherit;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  color: #e8f8eb;
+  border-style: none;
+  border-radius: 10px;
+}
+/* line 466, ../sass/screen.scss */
+.elyaItemFull .item-info .handmade {
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+}
+/* line 470, ../sass/screen.scss */
+.elyaItemFull .item-info .handmade .icon {
+  width: 3rem;
+  height: 3rem;
+}
+/* line 474, ../sass/screen.scss */
+.elyaItemFull .item-info .handmade .label {
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
+}
+/* line 479, ../sass/screen.scss */
+.elyaItemFull .item-info .free-shipping {
+  margin: 0.25rem 0;
+  text-align: right;
+}
+/* line 482, ../sass/screen.scss */
+.elyaItemFull .item-info .free-shipping .right-align {
+  display: inline-block;
+  font-size: 0.75rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(232, 248, 235, 0.5);
+  border-radius: 10px;
+  padding: 0.4em 0.8em;
 }

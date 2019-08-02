@@ -3,12 +3,12 @@ var React = require('react');
 var {Motion, StaggeredMotion, spring} = require('react-motion');
 const Link = require("react-router-dom").Link;
 var Icon = require("./ElyaIcons.jsx");
+var cssVariables = require("../../sass/variables.scss").locals;
 
-// Эти данные заданы в css, скопируй их оттуда
-const M_X = 0.5;
-const M_Y = 0.5;
-const MENU_BUTTON_HEIGHT = 2;//em
-const MENU_ITEM_HEIGHT = 2;
+const M_X = parseFloat(cssVariables.menuBtnLeft);//em
+const M_Y = parseFloat(cssVariables.menuBtnTop);
+const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.menuBtnHeight);
+const MENU_ITEM_HEIGHT = parseFloat(cssVariables.menuItemHeight);
 
 const MENU_ITEM_WIDTH = 7;
 const TRIGGER_DISTANCE = 0.7;
@@ -22,8 +22,6 @@ function getItemStyle(pos, buttonIndex, animated=true) {
     let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH : 0);
     let y = M_Y + MENU_BUTTON_HEIGHT + (MENU_ITEM_HEIGHT * buttonIndex) + 0.5; //em
     return {
-        //width: MENU_ITEM_WIDTH,
-        //height: MENU_ITEM_HEIGHT,
         left: animated ? spring(x, SPRING_CONFIG) : x,
         top: y
     };
@@ -122,7 +120,7 @@ class ElyaMenu extends React.Component {
                     {rotate: spring(-180, SPRING_CONFIG)};
         }
         return (
-            <div className="elya-menu">
+            <div className="elyaMenu">
                 <Motion style={mainButtonRotation}>
                     {({rotate}) =>
                         <div className="menu-button" onClick={this.toggleMenu}

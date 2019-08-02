@@ -5,9 +5,15 @@
 
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 @import "variables.scss";
+
+$richFont: 'Playfair Display', serif;
+$richFont: 'Dancing Script', cursive;
+$richFont: 'Nanum Myeongjo', serif;
 
 html { font-size: calc(1em + 1vw); }
 
@@ -16,6 +22,7 @@ html { font-size: calc(1em + 1vw); }
   //filter: alpha(opacity=#{$opacity * 100});
 }
 
+$mainBorderColor: rgba($mainTextColor, 0.5);
 a {
   outline: none;
   text-decoration: none;
@@ -31,35 +38,41 @@ a {
   }
   &:active {
     color: white;
+  }
 }
+hr {
+  border-style: solid;
+  border-color: $mainBorderColor;
+  border-width: 0.5px;
 }
 
 .elya {
-  font-family: 'Open Sans', sans-serif;
+  //font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', serif;
   //font-size: 16px;
   //font-size: 1em;
   background-color: $mainColor;
   color: $mainTextColor;
-  .elya-menu {
+  &Menu {
     $menuFontSize: 4vh;
     font-size: $menuFontSize;
+    font-family: $richFont;
     .menu-button, div.menu-item {
       position: absolute;
       z-index: 20;
-      background-color: rgba(#313131, 0.7);
       border-style: solid;
-      border-radius: 10px;
-      border-width: 2px;
-      border-color: $mainTextColor;
+      border-width: 0.5px;
+      border-color: $mainBorderColor;
     }
     .menu-button {
-      width: 2em; // захардкожен в ElyaMenu.jsx
-      height: 2em; // захардкожен в ElyaMenu.jsx
-      top: 0.5em; // захардкожен в ElyaMenu.jsx
-      left: 0.5em; // захардкожен в ElyaMenu.jsx
+      width: $menuBtnHeight;
+      height: $menuBtnHeight;
+      top: $menuBtnTop;
+      left: $menuBtnLeft;
       font-size: 1em;
       border-radius: 1em;
       .icon {
+        color: $mainBorderColor;
         position: relative;
         width: 50%;
         top: 50%;
@@ -69,10 +82,13 @@ a {
       }
     }
     .menu-item {
-      height: 1.5em;
-      line-height: 1.5em;
-      padding-left: 0.4em;
-      padding-right: 0.4em;
+      $height: $menuItemHeight - 0.5em;
+      height: $height;
+      line-height: $height;
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+      border-radius: 0.25*$height;
+      background-color: rgba(#313131, 0.7);
     }
   }
   &Navbar {
@@ -80,6 +96,9 @@ a {
     //background-color: #b5f571;
     $logoHeight: $navbarHeight*0.8;
     height: $navbarHeight;
+    margin-bottom: 1rem;
+    position: relative;
+    background-color: darken($mainColor, 5%);
     .menu-button {
       max-width: $navbarHeight;
     }
@@ -110,6 +129,13 @@ a {
         top: 50%;
         transform: translateY(-50%);
       }
+    }
+    hr {
+      display: none;
+      position: absolute;
+      width: 100%;
+      margin: 0 0 0 -15px;
+      border-color: $mainBorderColor;
     }
   }
   &Video {
@@ -165,18 +191,18 @@ a {
           text-align: center;
           font-size: 2rem;
           padding-bottom: 1rem;
+          font-family: $richFont;
         }
         .elyaCatalogItem /*.col-<breakpoint>-<X>*/
         {
           padding: 10px;
           .context {
-            $catalogBorderColor: lighten($mainColor, 50%);
             width: 100%;
             //height: 100%;
             border-style: solid;
-            border-radius: 10px;
+            border-radius: 1rem;
             border-width: 1px;
-            border-color: $catalogBorderColor;
+            border-color: $mainBorderColor;
             overflow: hidden;
 
             $imgHeight: 95%;
@@ -254,7 +280,7 @@ a {
                       position: relative;
                       top: 50%;
                       transform: translateY(-50%); // выравнивание по вертикали
-                      width: 60%;
+                      width: 40%;
                       color: rgba($mainTextColor, 0.5);
                       margin-left: auto;
                       margin-right: auto;
@@ -277,14 +303,15 @@ a {
                 $sliderWidth: 60%;
                 width: $sliderWidth;
                 margin-left: (100% - $sliderWidth) / 2;
-                height: 5px;
+                height: 4px;
                 margin-top: -5%;
                 z-index: 11;
                 .dot {
                   width: 100%;
                   background-color: rgba($mainTextColor, 0.3);
-                  margin-left: 10px;
-                  margin-right: 10px;
+                  margin-left: 5px;
+                  margin-right: 5px;
+                  border-radius: 2px;
                   &.active {
                     background-color: $mainTextColor;
                   }
@@ -292,35 +319,41 @@ a {
               }
             }
 
-            hr {
+            &>hr {
+              display: none;
               margin-top: 0;
               margin-bottom: 0;
               width: 100%;
-              border-color: $catalogBorderColor;
+              border-color: $mainBorderColor;
             }
 
             .footer {
               width: 100%;
               height: 4.5rem;
-              padding-top: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background-color: darken($mainColor, 5%);
 
-              div.price {
-                float: right;
-                font-size: 1.5rem;
-                margin-right: 1rem;
-                padding-top: 0.5rem;
+              .price {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                text-align: right;
+                &:before {
+                  content: "US ";
+                  color: rgba($mainTextColor, 0.6);
+                }
               }
 
               button {
-                float: left;
-                background-color: darken($mainColor, 10%);
+                background-color: darken($mainColor, 7%);
                 color: $mainTextColor;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 1.5rem;
+                font-family: inherit;
+                font-size: 1rem;
                 height: 2.5rem;
-                padding-right: 1em;
-                padding-left: 1em;
-                margin-left: 1rem;
+                padding-right: 1rem;
+                padding-left: 1rem;
+                margin-left: 0.5rem;
                 line-height: 2.5rem;
                 border-style: none;
                 border-radius: 1.25rem;
@@ -338,7 +371,7 @@ a {
         line-height: $mainContextHeight;
         .wrapper-center {
           display: inline-block;
-          vertical-align: middle;
+          vertical-align: top;
           max-height: $mainContextHeight;
           text-align: initial;
           max-width: 100%;
@@ -381,27 +414,45 @@ a {
       }
     }
     .item-info {
+      font-size: 0.75rem;
       .name {
         text-align: center;
-        font-family: 'Playfair Display', serif;
+        font-family: $richFont;
         font-size: 2rem;
         padding: 0.5rem;
         margin-bottom: 0.25rem;
         background-color: lighten($mainColor, 5%);
-        border-radius: 10px;
+        //background-color: darken($alternativeColor, 3%);
+        //border-radius: 10px;
       }
       .price {
+        font-size: 1rem;
         text-align: right;
+        &:before {
+          content: "US ";
+          color: rgba($mainTextColor, 0.6);
+        }
       }
       .description {
-
+        font-size: 0.75rem;
+        line-height: 1rem;
       }
-      .materials {
-
+      ul.materials {
+        list-style-type: disc;
+        list-style-position: inside;
+        li {
+          margin-top: 0.25rem;
+          margin-bottom: 0.25rem;
+        }
+      }
+      hr {
+        width: 100%;
+        margin: 0.5rem auto;
       }
       button.add-to-cart {
         background-color: darken($mainColor, 40%);
         font-size: 1rem;
+        font-family: inherit;
         margin: 0.5rem 0;
         padding: 0.5rem;
         width: 100%;
@@ -410,8 +461,17 @@ a {
         border-radius: 10px;
       }
       .handmade {
-        width: 5rem;
-        height: 5rem;
+        padding: 0.3rem 0;
+        display: flex;
+        align-items: center;
+        .icon {
+          width: 3rem;
+          height: 3rem;
+        }
+        .label {
+          font-size: 0.75rem;
+          padding-left: 0.25rem;
+        }
       }
       .free-shipping {
         margin: 0.25rem 0;
@@ -421,7 +481,7 @@ a {
           font-size: 0.75rem;
           border-style: solid;
           border-width: 1px;
-          border-color: $mainTextColor;
+          border-color: $mainBorderColor;
           border-radius: 10px;
           padding: 0.4em 0.8em;
         }

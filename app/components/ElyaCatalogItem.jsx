@@ -72,7 +72,7 @@ class SliderArrows extends React.Component {
                              }
                          }}
                     >
-                        <Icon.leftShort mirror={dir === "right"}/>
+                        <Icon.left mirror={dir === "right"}/>
                     </div>
                 )}
             </div>
@@ -144,8 +144,8 @@ class ElyaCatalogItem extends React.Component {
 
                     <hr/>
                     <div className="footer">
-                        <button>
-                            купить
+                        <button onClick={(e) => this.setState({redirect: true})}>
+                            Details
                         </button>
                         <div className="price">
                             {this.props.item.price}

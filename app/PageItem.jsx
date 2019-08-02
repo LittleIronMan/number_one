@@ -10,8 +10,8 @@ class ElyaItemFull extends React.Component {
     }
     render() {
         let images = this.props.item.images;
-        let oneImgHeight = parseInt(cssVariables.mainContextHeight)/images.length;
-        return <div className="elyaItemFull container-fluid">
+        let oneImgHeight = parseFloat(cssVariables.mainContextHeight)/images.length;
+        return <div className="elyaItemFull container">
             <div className="row">
                 <div className="images col-12 col-lg-8">
                     <div className="row">
@@ -38,10 +38,16 @@ class ElyaItemFull extends React.Component {
                         <p className="right-align">Free shipping</p>
                     </p>
                     <button className="add-to-cart">Add to cart</button>
-                    <p className="materials">{this.props.item.materials}</p>
-                    <p className="handmade"><Icon.handmade/></p>
+                    <ul className="materials">
+                        Materials:
+                        {this.props.item.materials.map(material =>
+                            <li>{material}</li>
+                        )}
+                    </ul>
+                    <hr/>
                     <p className="description">{this.props.item.description}</p>
-                    <p className="package-shipping"></p>
+                    <div className="handmade"><Icon.handmade2/><h1 className="label">100% Handmade</h1></div>
+                    {/*<p className="package-shipping"></p>*/}
                 </div>
             </div>
             <div className="row">
@@ -62,7 +68,7 @@ class ElyaPageItem extends React.Component {
         return <div className="elya">
             <ElyaNavbar/>
             <ElyaMenu menuItems={menuItems}/>
-            <ElyaItemFull item={catalogItems.filter(item => item.name === itemID)[0]}/>
+            <ElyaItemFull item={catalogItems.filter(item => item.name.toLowerCase() === itemID.toLowerCase())[0]}/>
             <ElyaFooter/>
         </div>;
     }

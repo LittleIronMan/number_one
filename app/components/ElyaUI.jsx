@@ -38,6 +38,7 @@ class ElyaNavbar extends React.Component {
                 {/*    <Icon.x/>*/}
                 {/*</div>*/}
             </div>
+            <hr/>
         </div>;
     }
 }

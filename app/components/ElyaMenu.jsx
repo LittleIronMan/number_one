@@ -3,11 +3,12 @@ import React from "react";
 import {Motion, StaggeredMotion, spring} from 'react-motion';
 import {Link} from "react-router-dom";
 import Icon from "./ElyaIcons.jsx";
-import {locals as cssVariables} from "../../sass/variables.scss";
+import cssVariables from "../vars.scss";
+import style from "./ElyaMenu.scss";
 
 const M_X = parseFloat(cssVariables.menuBtnLeft);//em
 const M_Y = parseFloat(cssVariables.menuBtnTop);
-const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.menuBtnHeight);
+const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.$menuBtnHeight);
 const MENU_ITEM_HEIGHT = parseFloat(cssVariables.menuItemHeight);
 
 const MENU_ITEM_WIDTH = 7;
@@ -96,7 +97,7 @@ class ElyaMenu extends React.Component {
                     <div>
                         {interpolatedStyles.map(({width, height, top, left}, index) => {
                                 const item = this.props.menuItems[index];
-                                return <div className="menu-item"
+                                return <div className={style.menuItem}
                                             key={index}
                                             style={{top: `${top}em`, left: `${left}em`}}>
                                     <Link to={item.path}>{item.text}</Link>
@@ -120,12 +121,12 @@ class ElyaMenu extends React.Component {
                     {rotate: spring(-180, SPRING_CONFIG)};
         }
         return (
-            <div className="elyaMenu">
+            <div className={style.elyaMenu}>
                 <Motion style={mainButtonRotation}>
                     {({rotate}) =>
-                        <div className="menu-button" onClick={this.toggleMenu}
+                        <div className={style.menuButton} onClick={this.toggleMenu}
                              style={{transform: `rotate(${rotate}deg)`}}>
-                            <Icon.hamburger/>
+                            <Icon.hamburger className={style.icon}/>
                         </div>
                     }
                 </Motion>

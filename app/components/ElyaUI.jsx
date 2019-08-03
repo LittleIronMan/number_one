@@ -1,42 +1,20 @@
 import React from "react";
 import Icon from "./ElyaIcons.jsx";
+import style from "./ElyaUI.scss";
 
 class ElyaNavbar extends React.Component {
     render() {
-        return <div className="elyaNavbar container-fluid">
+        return <div className={style.elyaNavbar + " container-fluid"}>
             <div className="row">
-                <div className="menu-button col"></div>
-                <div className="logo col"/>
-                <div className="unused col"></div>
-                <div className="cart col">
-                    <Icon.cart/>
-                    {/*<img src="/icons/cart_outline.svg" alt="" className="icon"/>*/}
-                    {/*<i className="icon fa fa-shopping-cart"/>*/}
+                <div className={style.menuButton + " col"}/>
+                <div className={style.logo + " col"}/>
+                <div className="unused col"/>
+                <div className={style.cart + " col"}>
+                    <Icon.cart className={style.icon}/>
                 </div>
-                {/*<div className="cart col">*/}
-                {/*    <Icon.cart2/>*/}
-                {/*</div>*/}
-                <div className="e-mail col">
-                    <Icon.email/>
+                <div className={style.eMail + " col"}>
+                    <Icon.email className={style.icon}/>
                 </div>
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.android/>*/}
-                {/*</div>*/}
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.googlePlay/>*/}
-                {/*</div>*/}
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.appStore/>*/}
-                {/*</div>*/}
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.share/>*/}
-                {/*</div>*/}
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.xInRound/>*/}
-                {/*</div>*/}
-                {/*<div className="other-icons col">*/}
-                {/*    <Icon.x/>*/}
-                {/*</div>*/}
             </div>
             <hr/>
         </div>;
@@ -103,14 +81,14 @@ class ElyaTitleYoutube extends React.Component {
         }
     }
     render() {
-        return <div className="elyaVideo">
+        return <div className={style.elyaVideo}>
             {/*Youtube video*/}
-            <div className={`${this.state.userClicked ? "stub-youtube" : "youtube-preview"}`} onClick={this.onClick}>
+            <div className={this.state.userClicked ? style.stubYoutube : style.youtubePreview} onClick={this.onClick}>
                 {this.state.userClicked ? null :
-                    <Icon.youtubePlay/> /* иконка play у превьюшки */
+                    <Icon.youtubePlay className={style.icon}/> /* иконка play у превьюшки */
                 }
             </div>
-            <div id="elyaVideoPlayer" className="youtube"/>
+            <div id="elyaVideoPlayer" className={style.youtube}/>
             {/*<iframe*/}
             {/*    id="elyaVideoPlayer"*/}
             {/*    className="youtube"*/}
@@ -135,7 +113,7 @@ class ElyaTitleYoutube extends React.Component {
 
 class ElyaFooter extends React.Component {
     render() {
-        return <div className="elyaFooter">
+        return <div className={style.elyaFooter}>
             Users feedbacks and comments
         </div>;
     }

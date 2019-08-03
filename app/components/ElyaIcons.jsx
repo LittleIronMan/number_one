@@ -1,4 +1,3 @@
-// import React from 'react';
 import React from "react";
 
 function iconWrapper(svgContent, viewBox) {
@@ -11,7 +10,7 @@ function iconWrapper(svgContent, viewBox) {
             // ... and renders the wrapped component with the fresh data!
             // Notice that we pass through any additional props
             let mirror = (typeof this.props.mirror !== "undefined") ? {transform: "scale(-1, 1)"} : null;
-            return <div className="icon" {...this.props}>
+            return <div {...this.props}>
                 <svg
                     style={{fill: "currentColor", display: "block", ...mirror}}
                     {...viewBox}

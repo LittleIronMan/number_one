@@ -1,0 +1,90 @@
+@import "../vars.scss";
+
+.elyaNavbar {
+  width: 100%;
+  //background-color: #b5f571;
+  $logoHeight: $navbarHeight*0.8;
+  height: $navbarHeight;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: darken($mainColor, 5%);
+  .menu-button {
+    max-width: $navbarHeight;
+  }
+  .logo {
+    position: relative;
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../img/logo.png");
+    width: $logoHeight * 1.6;
+    height: $logoHeight;
+    top: ($navbarHeight - $logoHeight)/2;
+  }
+  .cart, .other-icons {
+    max-width: calc(30px + #{0.8*$navbarHeight});
+  }
+  .e-mail {
+    max-width: calc(30px + #{0.5*$navbarHeight});
+  }
+  .cart, .e-mail, .other-icons {
+    text-align: center;
+    //height: $logoHeight;
+    height: $navbarHeight;
+    .icon {
+      //height: 100px;
+      //width: 100px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  hr {
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin: 0 0 0 -15px;
+    border-color: $mainBorderColor;
+  }
+}
+.elyaVideo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-top: -1rem;
+  //width: 100%;
+  //background-color: #f5d85c;
+  //height: 800px;
+  .youtube, .stub-youtube, .youtube-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .youtube-preview, .stub-youtube {
+    z-index: 1;
+  }
+  .youtube-preview { // превьюшка над видео
+    background-image: url("../../img/youtube-no-logo.jpg");
+    background-size: cover;
+    background-position: center;
+    .icon {
+      width: 4rem;
+      color: rgba($mainTextColor, 0.75);
+      pointer-events:none;
+      margin-top: 25%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .stub-youtube { // прозрачный контейнер над видео
+    background-color: rgba($mainColor, 0);
+  }
+}
+.elyaFooter {
+  width: 100%;
+  background-color: darken($mainColor, 2%);
+  height: 800px;
+}

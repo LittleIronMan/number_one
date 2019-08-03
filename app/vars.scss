@@ -1,0 +1,15 @@
+$richFont: 'Playfair Display', serif;
+$richFont: 'Dancing Script', cursive;
+$richFont: 'Nanum Myeongjo', serif;
+
+//$mainColor: #172f1c;
+$mainColor: #103819;
+$mainTextColor: lighten($mainColor, 80%);
+$mainBorderColor: rgba($mainTextColor, 0.5);
+$navbarHeight: 12vh;
+$mainContextHeight: 72vh;
+
+$menuBtnHeight: 2em;
+$menuBtnTop: 0.5em;
+$menuBtnLeft: 0.5em;
+$menuItemHeight: 3em;

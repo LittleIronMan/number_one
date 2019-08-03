@@ -5,72 +5,72 @@
     <title>Webpack в React</title>
 
 <!--    следующие строки убрать, если будет использоваться webpack-->
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+<!--    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>-->
+<!--    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>-->
 <!-- Load an icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
-    <link rel="stylesheet" href="/stylesheets/screen.css">
+    <link rel="stylesheet" href="/public/main.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap-grid.css">
 </head>
 <body>
     <div id="app"></div>
-        <script type="text/javascript">
-            // глобальные константы, некоторые используются и в других модулях
-            var youtubeAPI_ready = false; // флаг того Youtube API был загружен и можно отрисовывать плеер в каком-нибудь контейнере
-            var youtubePlayers = {}; // глобальная переменная, хранит в себе все плееры на странице
+    <script type="text/javascript">
+        // глобальные константы, некоторые используются и в других модулях
+        var youtubeAPI_ready = false; // флаг того Youtube API был загружен и можно отрисовывать плеер в каком-нибудь контейнере
+        var youtubePlayers = {}; // глобальная переменная, хранит в себе все плееры на странице
 
-            const menuItems = [
-                {text: "Main", path: "/"},
-                {text: "Catalog", path: "/catalog"},
-                {text: "Package", path: "/"},
-                {text: "Delivery", path: "/"},
-                {text: "About", path: "/"}
-            ];
+        const menuItems = [
+            {text: "Main", path: "/"},
+            {text: "Catalog", path: "/catalog"},
+            {text: "Package", path: "/"},
+            {text: "Delivery", path: "/"},
+            {text: "About", path: "/"}
+        ];
 
-            const catalogItems = [
-                {name: "Snowfall", price: "$100",
-                    images: [
-                        "../img/45_2.jpg",
-                        "../img/46_2.jpg",
-                        "../img/49_2.jpg",
-                        "../img/50_2.jpg"
-                    ],
-                    materials: [ "Wood", "Czech beads" ],
-                    description: "Lorem ipsum dolor sit amet," +
-                        "consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
-                        "ut labore et dolore magna aliqua."
-                },
-                {name: "Phoenix", price: "$200",
-                    images: [
-                        "../img/47_2.jpg",
-                        "../img/48_2.jpg",
-                        "../img/52_2.jpg"
-                    ],
-                    materials: [ "Wood", "Czech beads" ],
-                    description: "Lorem ipsum dolor sit amet," +
-                        "consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
-                        "ut labore et dolore magna aliqua."
-                }
-            ];
-        </script>
-
-        <script src="/public/bundle.js"></script>
-
-<!--        <script src="https://www.youtube.com/iframe_api"></script>-->
-        <script type="text/javascript">
-            // load API
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-            // src="https://www.youtube.com/embed/DhDMu9_Sfyw?rel=0&amp;controls=0&amp;showinfo=0&loop=0&autoplay=1&autohide=1&wmode=opaque&enablejsapi=1&mute=1&modestbranding=1"
-            function onYouTubeIframeAPIReady() {
-                console.log("Youtube API ready");
-                youtubeAPI_ready = true;
+        const catalogItems = [
+            {name: "Snowfall", price: "$100",
+                images: [
+                    "../img/45_2.jpg",
+                    "../img/46_2.jpg",
+                    "../img/49_2.jpg",
+                    "../img/50_2.jpg"
+                ],
+                materials: [ "Wood", "Czech beads" ],
+                description: "Lorem ipsum dolor sit amet," +
+                    "consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
+                    "ut labore et dolore magna aliqua."
+            },
+            {name: "Phoenix", price: "$200",
+                images: [
+                    "../img/47_2.jpg",
+                    "../img/48_2.jpg",
+                    "../img/52_2.jpg"
+                ],
+                materials: [ "Wood", "Czech beads" ],
+                description: "Lorem ipsum dolor sit amet," +
+                    "consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
+                    "ut labore et dolore magna aliqua."
             }
-        </script>
-    </body>
+        ];
+    </script>
+
+    <script src="/public/bundle.js"></script>
+
+<!--<script src="https://www.youtube.com/iframe_api"></script>-->
+    <script type="text/javascript">
+        // load API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // src="https://www.youtube.com/embed/DhDMu9_Sfyw?rel=0&amp;controls=0&amp;showinfo=0&loop=0&autoplay=1&autohide=1&wmode=opaque&enablejsapi=1&mute=1&modestbranding=1"
+        function onYouTubeIframeAPIReady() {
+            console.log("Youtube API ready");
+            youtubeAPI_ready = true;
+        }
+    </script>
+</body>
 </html>

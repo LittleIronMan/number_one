@@ -5,6 +5,9 @@ import {Motion, spring} from 'react-motion';
 import {Swipeable} from 'react-swipeable';
 import {CSSTransition} from 'react-transition-group';
 import Icon from './ElyaIcons.jsx';
+import cx from "classnames";
+
+import style from "./ElyaCatalogItem.scss"
 
 class SliderImages extends React.Component {
     constructor(props) {
@@ -15,9 +18,9 @@ class SliderImages extends React.Component {
         let name = this.props.name;
         return <Motion style={{selectedImgSpring: spring(this.state.selectedImage)}}>
             {({selectedImgSpring}) =>
-                <div className="slider-img" key="img-box">
+                <div className={style.sliderImg} key="img-box">
                     {this.props.images.map((img, index) =>
-                        <img className="img" src={`./${img}`} style={{ left: `${(index - selectedImgSpring) * 100}%` }} key={"img" + name + index}/>
+                        <img className={style.img} src={`./${img}`} style={{ left: `${(index - selectedImgSpring) * 100}%` }} key={"img" + name + index}/>
                     )}
                 </div>}
         </Motion>
@@ -30,9 +33,9 @@ class SliderDots extends React.Component {
         this.state = {selectedImage: 0};
     }
     render() {
-        return <div className="slider-dots">
+        return <div className={style.sliderDots}>
             {this.props.images.map((img, idx) =>
-                <div key={"dot" + idx} className={`dot${idx === this.state.selectedImage ? " active" : ""}`}/>
+                <div key={"dot" + idx} className={cx(style.dot, {[style.active]: idx === this.state.selectedImage})}/>
             )}
         </div>
     }
@@ -73,7 +76,7 @@ class SliderArrows extends React.Component {
                              }
                          }}
                     >
-                        <Icon.left mirror={dir === "right" ? "true" : undefined}/>
+                        <Icon.left className="icon" mirror={dir === "right" ? "true" : undefined}/>
                     </div>
                 )}
             </div>
@@ -130,10 +133,10 @@ class ElyaCatalogItem extends React.Component {
                 preventDefaultTouchmoveEvent: true,
                 trackMouse: true
             };
-            return <div className="elyaCatalogItem col-6 col-lg-4">
-                <div className="context">
-                    <div className="slider" onMouseDown={this.onMouseDown} onClick={this.onClick}>
-                        <Swipeable {...swipeConfig} className="slider-swipeable">
+            return <div className={style.elyaCatalogItem + " col-6 col-lg-4"}>
+                <div className={style.context}>
+                    <div className={style.slider} onMouseDown={this.onMouseDown} onClick={this.onClick}>
+                        <Swipeable {...swipeConfig} className={style.sliderSwipeable}>
                             {/*Непосредсвенно сами изображения, стоят бок-о-бок, в зоне видимости только selectedImage*/}
                             <SliderImages name={id} images={images} ref={this.setSliderImages}/>
                             {/*Стрелки для переключения слайдов*/}
@@ -144,11 +147,11 @@ class ElyaCatalogItem extends React.Component {
                     </div>
 
                     <hr/>
-                    <div className="footer">
+                    <div className={style.footer}>
                         <button onClick={(e) => this.setState({redirect: true})}>
                             Details
                         </button>
-                        <div className="price">
+                        <div className={style.price}>
                             {this.props.item.price}
                         </div>
                     </div>

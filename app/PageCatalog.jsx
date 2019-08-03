@@ -3,12 +3,14 @@ import ElyaMenu from './components/ElyaMenu.jsx';
 import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx';
 import ElyaCatalogItem from './components/ElyaCatalogItem.jsx';
 
+import style from "./PageCatalog.scss";
+
 class ElyaCatalog extends React.Component {
     render() {
-        return <div className="elyaCatalogWrapper">
+        return <div className={style.elyaCatalogWrapper}>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="catalog-title col-12"> CATALOG </div>
+                    <div className={style.catalogTitle + " col-12"}> CATALOG </div>
                 </div>
                 <div className="row">
                 {catalogItems.map((item, index) =>
@@ -22,7 +24,7 @@ class ElyaCatalog extends React.Component {
 
 class ElyaPageCatalog extends React.Component {
     render() {
-        return <div className="elya">
+        return <div className={style.elya}>
             <ElyaNavbar/>
             <ElyaMenu menuItems={menuItems}/>
             {/*<ElyaTitleYoutube/>*/}

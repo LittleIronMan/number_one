@@ -1,0 +1,31 @@
+@import "vars.scss";
+@import "compass-reset";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+
+html { font-size: calc(1em + 1vw); }
+
+.elya {
+  //font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  //font-size: 16px;
+  //font-size: 1em;
+  background-color: $mainColor;
+  color: $mainTextColor;
+}
+
+// the :export directive is the magic sauce for webpack
+:export {
+  mainColor: $mainColor;
+  mainTextColor: $mainTextColor;
+  navbarHeight: $navbarHeight;
+  $mainContextHeight: $mainContextHeight;
+
+  menuBtnHeight: $menuBtnHeight;
+  menuBtnTop: $menuBtnTop;
+  menuBtnLeft: $menuBtnLeft;
+  menuItemHeight: $menuItemHeight;
+}

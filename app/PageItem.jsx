@@ -4,7 +4,8 @@ import {ElyaNavbar, ElyaFooter} from './components/ElyaUI.jsx';
 import cssVariables from "./vars.scss";
 import Icon from "./components/ElyaIcons.jsx";
 
-import style from "./PageItem.scss"
+import style from "./PageItem.scss";
+import page from "./ElyaPage.scss";
 
 class ElyaItemFull extends React.Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class ElyaPageItem extends React.Component {
     }
     render() {
         const itemID = this.props.match.params.id;
-        return <div className={style.elya}>
+        return <div className={page.elya}>
             <ElyaNavbar/>
             <ElyaMenu menuItems={menuItems}/>
             <ElyaItemFull item={catalogItems.filter(item => item.name.toLowerCase() === itemID.toLowerCase())[0]}/>

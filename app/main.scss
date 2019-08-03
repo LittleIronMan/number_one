@@ -8,24 +8,25 @@
 
 html { font-size: calc(1em + 1vw); }
 
-.elya {
-  //font-family: 'Open Sans', sans-serif;
-  font-family: 'Libre Baskerville', serif;
-  //font-size: 16px;
-  //font-size: 1em;
-  background-color: $mainColor;
+a {
+  outline: none;
+  text-decoration: none;
   color: $mainTextColor;
+  &:focus {
+    color: $mainTextColor;
+  }
+  &:link, &:visited {
+    color: $mainTextColor;
+  }
+  &:hover {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
 }
-
-// the :export directive is the magic sauce for webpack
-:export {
-  mainColor: $mainColor;
-  mainTextColor: $mainTextColor;
-  navbarHeight: $navbarHeight;
-  $mainContextHeight: $mainContextHeight;
-
-  menuBtnHeight: $menuBtnHeight;
-  menuBtnTop: $menuBtnTop;
-  menuBtnLeft: $menuBtnLeft;
-  menuItemHeight: $menuItemHeight;
+hr {
+  border-style: solid;
+  border-color: $mainBorderColor;
+  border-width: 0.5px;
 }

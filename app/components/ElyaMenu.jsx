@@ -8,7 +8,7 @@ import style from "./ElyaMenu.scss";
 
 const M_X = parseFloat(cssVariables.menuBtnLeft);//em
 const M_Y = parseFloat(cssVariables.menuBtnTop);
-const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.$menuBtnHeight);
+const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.menuBtnHeight);
 const MENU_ITEM_HEIGHT = parseFloat(cssVariables.menuItemHeight);
 
 const MENU_ITEM_WIDTH = 7;

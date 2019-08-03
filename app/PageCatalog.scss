@@ -2,14 +2,10 @@
 
 .elyaCatalogWrapper {
   padding: 10px;
-  .container-fluid { // товары располагаются в адаптивной сетке boostrap'a
-    .row {
-      .catalog-title {
-        text-align: center;
-        font-size: 2rem;
-        padding-bottom: 1rem;
-        font-family: $richFont;
-      }
-    }
+  /*containter-fluid row */.catalog-title {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    font-family: $richFont;
   }
 }

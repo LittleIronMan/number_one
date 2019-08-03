@@ -4,6 +4,7 @@ import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx'
 import ElyaCatalogItem from './components/ElyaCatalogItem.jsx';
 
 import style from "./PageCatalog.scss";
+import page from "./ElyaPage.scss";
 
 class ElyaCatalog extends React.Component {
     render() {
@@ -24,7 +25,7 @@ class ElyaCatalog extends React.Component {
 
 class ElyaPageCatalog extends React.Component {
     render() {
-        return <div className={style.elya}>
+        return <div className={page.elya}>
             <ElyaNavbar/>
             <ElyaMenu menuItems={menuItems}/>
             {/*<ElyaTitleYoutube/>*/}

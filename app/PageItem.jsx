@@ -1,8 +1,8 @@
-var React = require('react');
-var ElyaMenu = require('./components/ElyaMenu.jsx');
-var {ElyaNavbar, ElyaFooter} = require('./components/ElyaUI.jsx');
-var cssVariables = require('../sass/variables.scss').locals;
-var Icon = require("./components/ElyaIcons.jsx");
+import React from 'react';
+import ElyaMenu from './components/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaFooter} from './components/ElyaUI.jsx';
+import {locals as cssVariables} from '../sass/variables.scss';
+import Icon from "./components/ElyaIcons.jsx";
 
 class ElyaItemFull extends React.Component {
     constructor(props) {
@@ -74,4 +74,4 @@ class ElyaPageItem extends React.Component {
     }
 }
 
-module.exports = ElyaPageItem;
+export default ElyaPageItem;

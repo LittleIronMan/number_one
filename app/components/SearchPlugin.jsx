@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 
 class SearchPlugin extends React.Component{
 
@@ -17,4 +17,4 @@ class SearchPlugin extends React.Component{
     }
 }
 
-module.exports = SearchPlugin;
+export SearchPlugin;

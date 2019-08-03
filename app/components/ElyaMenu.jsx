@@ -1,9 +1,9 @@
 'use strict';
-var React = require('react');
-var {Motion, StaggeredMotion, spring} = require('react-motion');
-const Link = require("react-router-dom").Link;
-var Icon = require("./ElyaIcons.jsx");
-var cssVariables = require("../../sass/variables.scss").locals;
+import React from "react";
+import {Motion, StaggeredMotion, spring} from 'react-motion';
+import {Link} from "react-router-dom";
+import Icon from "./ElyaIcons.jsx";
+import {locals as cssVariables} from "../../sass/variables.scss";
 
 const M_X = parseFloat(cssVariables.menuBtnLeft);//em
 const M_Y = parseFloat(cssVariables.menuBtnTop);
@@ -135,4 +135,4 @@ class ElyaMenu extends React.Component {
     }
 }
 
-module.exports = ElyaMenu;
+export default ElyaMenu;

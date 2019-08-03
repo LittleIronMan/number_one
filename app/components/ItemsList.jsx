@@ -1,5 +1,5 @@
-var React = require('react');
-var SearchPlugin = require('./SearchPlugin.jsx');
+import React from 'react';
+import SearchPlugin from './SearchPlugin.jsx';
 
 class ItemsList extends React.Component {
     constructor(props){
@@ -32,4 +32,4 @@ class ItemsList extends React.Component {
     }
 }
 
-module.exports = ItemsList;
+export ItemsList;

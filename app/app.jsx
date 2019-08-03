@@ -1,12 +1,10 @@
-var ReactDOM = require('react-dom');
-var React = require('react');
-const Router = require("react-router-dom").BrowserRouter;
-const Route = require("react-router-dom").Route;
-const Switch = require("react-router-dom").Switch;
+import ReactDOM from "react-dom";
+import React from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-var MainPage = require('./PageMain.jsx');
-var CatalogPage = require('./PageCatalog.jsx');
-var ItemPage = require('./PageItem.jsx');
+import MainPage from "./PageMain.jsx";
+import CatalogPage from "./PageCatalog.jsx";
+import ItemPage from "./PageItem.jsx";
 
 ReactDOM.render(
     <Router>

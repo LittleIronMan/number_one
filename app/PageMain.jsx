@@ -1,6 +1,6 @@
-var React = require('react');
-var ElyaMenu = require('./components/ElyaMenu.jsx');
-var {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} = require('./components/ElyaUI.jsx');
+import React from "react";
+import ElyaMenu from './components/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx';
 
 class ElyaCatalogMini extends React.Component {
     render() {
@@ -22,4 +22,4 @@ class ElyaPageMain extends React.Component {
     }
 }
 
-module.exports = ElyaPageMain;
+export default ElyaPageMain;

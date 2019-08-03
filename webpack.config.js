@@ -28,6 +28,9 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     optimization: {
         // We no not want to minimize our code.
         minimize: false

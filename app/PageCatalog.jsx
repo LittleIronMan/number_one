@@ -1,7 +1,7 @@
-var React = require('react');
-var ElyaMenu = require('./components/ElyaMenu.jsx');
-var {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} = require('./components/ElyaUI.jsx');
-var ElyaCatalogItem = require('./components/ElyaCatalogItem.jsx');
+import React from 'react';
+import ElyaMenu from './components/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx';
+import ElyaCatalogItem from './components/ElyaCatalogItem.jsx';
 
 class ElyaCatalog extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class ElyaCatalog extends React.Component {
                 </div>
                 <div className="row">
                 {catalogItems.map((item, index) =>
-                    <ElyaCatalogItem item={item}/>
+                    <ElyaCatalogItem item={item} key={item.name}/>
                 )}
                 </div>
             </div>
@@ -32,4 +32,4 @@ class ElyaPageCatalog extends React.Component {
     }
 }
 
-module.exports = ElyaPageCatalog;
+export default ElyaPageCatalog;

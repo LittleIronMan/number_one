@@ -1,5 +1,5 @@
-var React = require('react');
-var Icon = require('./ElyaIcons.jsx');
+import React from "react";
+import Icon from "./ElyaIcons.jsx";
 
 class ElyaNavbar extends React.Component {
     render() {
@@ -141,4 +141,4 @@ class ElyaFooter extends React.Component {
     }
 }
 
-module.exports = {ElyaNavbar, ElyaTitleYoutube, ElyaFooter};
+export {ElyaNavbar, ElyaTitleYoutube, ElyaFooter};

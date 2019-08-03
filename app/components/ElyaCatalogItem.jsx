@@ -1,10 +1,10 @@
 'use strict';
-var React = require('react');
-var {Redirect} = require('react-router-dom');
-var {Motion, spring} = require('react-motion');
-var {Swipeable} = require('react-swipeable');
-var CSSTransition = require('react-transition-group').CSSTransition;
-var Icon = require('./ElyaIcons.jsx');
+import React from 'react';
+import {Redirect} from 'react-router-dom';
+import {Motion, spring} from 'react-motion';
+import {Swipeable} from 'react-swipeable';
+import {CSSTransition} from 'react-transition-group';
+import Icon from './ElyaIcons.jsx';
 
 class SliderImages extends React.Component {
     constructor(props) {
@@ -12,11 +12,12 @@ class SliderImages extends React.Component {
         this.state = {selectedImage: 0};
     }
     render() {
+        let name = this.props.name;
         return <Motion style={{selectedImgSpring: spring(this.state.selectedImage)}}>
             {({selectedImgSpring}) =>
-                <div className="slider-img">
+                <div className="slider-img" key="img-box">
                     {this.props.images.map((img, index) =>
-                        <img className="img" src={`./${img}`} style={{ left: `${(index - selectedImgSpring) * 100}%` }}/>
+                        <img className="img" src={`./${img}`} style={{ left: `${(index - selectedImgSpring) * 100}%` }} key={"img" + name + index}/>
                     )}
                 </div>}
         </Motion>
@@ -31,7 +32,7 @@ class SliderDots extends React.Component {
     render() {
         return <div className="slider-dots">
             {this.props.images.map((img, idx) =>
-                <div className={`dot${idx === this.state.selectedImage ? " active" : ""}`}/>
+                <div key={"dot" + idx} className={`dot${idx === this.state.selectedImage ? " active" : ""}`}/>
             )}
         </div>
     }
@@ -55,7 +56,7 @@ class SliderArrows extends React.Component {
             {/* Стрелки будут отображаться только на десктопах и только при наведении указателя мыши на слайдер. */}
             <div className="slider-arrows">
                 {sliderArrows.map((dir) =>
-                    <div className={`arrow ${dir}`}
+                    <div key={"arrow_" + dir} className={"arrow " + dir}
                          onTouchStart={() => {
                              // при обнаружении касания пальцем(что означает использование мобильного устройства) -
                              // - делаем стрелки невидимыми.
@@ -72,7 +73,7 @@ class SliderArrows extends React.Component {
                              }
                          }}
                     >
-                        <Icon.left mirror={dir === "right"}/>
+                        <Icon.left mirror={dir === "right" ? "true" : undefined}/>
                     </div>
                 )}
             </div>
@@ -134,7 +135,7 @@ class ElyaCatalogItem extends React.Component {
                     <div className="slider" onMouseDown={this.onMouseDown} onClick={this.onClick}>
                         <Swipeable {...swipeConfig} className="slider-swipeable">
                             {/*Непосредсвенно сами изображения, стоят бок-о-бок, в зоне видимости только selectedImage*/}
-                            <SliderImages images={images} ref={this.setSliderImages}/>
+                            <SliderImages name={id} images={images} ref={this.setSliderImages}/>
                             {/*Стрелки для переключения слайдов*/}
                             <SliderArrows switchImg={(dir) => this.switchImg(dir)}/>
                         </Swipeable>
@@ -156,4 +157,4 @@ class ElyaCatalogItem extends React.Component {
         }
     }
 }
-module.exports = ElyaCatalogItem;
+export default ElyaCatalogItem;

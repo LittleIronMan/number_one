@@ -1,10 +1,10 @@
-import React from "react";
+import {Component} from 'react';
 import ElyaMenu from './components/ElyaMenu.jsx';
 import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx';
-import style from "./PageMain.scss";
-import page from "./ElyaPage.scss";
+import style from './PageMain.scss';
+import page from './ElyaPage.scss';
 
-class ElyaCatalogMini extends React.Component {
+class ElyaCatalogMini extends Component {
     render() {
         return <div className={style.elyaCatalog}>
             images Gallery
@@ -12,7 +12,7 @@ class ElyaCatalogMini extends React.Component {
     }
 }
 
-class ElyaPageMain extends React.Component {
+class ElyaPageMain extends Component {
     render() {
         return <div className={page.elya}>
             <ElyaNavbar/>

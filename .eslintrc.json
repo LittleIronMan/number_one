@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "google"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "linebreak-style": 0,
+        "require-jsdoc" : 0,
+        "max-len" : [
+            2,
+            {
+                "code": 120,
+                "tabWidth": 4
+            }
+        ],
+        "prefer-const": [
+            2, 
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "react/jsx-uses-vars": 2,
+        "indent": [2, 4]
+    }
+}

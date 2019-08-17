@@ -1,20 +1,19 @@
-import React from 'react';
+import {Component} from 'react';
 
-class SearchPlugin extends React.Component{
-
-    constructor(props){
+class SearchPlugin extends Component {
+    constructor(props) {
         super(props);
         this.onTextChanged = this.onTextChanged.bind(this);
     }
 
-    onTextChanged(e){
-        var text = e.target.value.trim();   // удаляем пробелы
+    onTextChanged(e) {
+        const text = e.target.value.trim(); // удаляем пробелы
         this.props.filter(text); // передаем введенный текст в родительский компонент
     }
 
     render() {
-        return <input placeholder="Поиск" onChange={this.onTextChanged} />;
+        return <input placeholder='Поиск' onChange={this.onTextChanged} />;
     }
 }
 
-export SearchPlugin;
+export default SearchPlugin;

@@ -1,8 +1,8 @@
 import {Component} from 'react';
-import ElyaMenu from './components/ElyaMenu.jsx';
-import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from './components/ElyaUI.jsx';
+import ElyaMenu from 'components/menu/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaTitleYoutube, ElyaFooter} from 'components/ui/ElyaUI.jsx';
 import style from './PageMain.scss';
-import page from './ElyaPage.scss';
+import page from 'styles/ElyaPage.scss';
 
 class ElyaCatalogMini extends Component {
     render() {

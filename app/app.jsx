@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import MainPage from './PageMain.jsx';
-import CatalogPage from './PageCatalog.jsx';
-import ItemPage from './PageItem.jsx';
-import './main.scss';
+import MainPage from 'pages/main/PageMain.jsx';
+import CatalogPage from 'pages/catalog/PageCatalog.jsx';
+import ItemPage from 'pages/item/PageItem.jsx';
+import 'styles/main.scss';
 
 ReactDOM.render(
     <Router>

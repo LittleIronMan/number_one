@@ -89,6 +89,13 @@ module.exports = {
             },
         ],
     },
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'app'),
+            'node_modules',
+            path.resolve(__dirname, 'img'),
+        ],
+    },
     devServer: {
         historyApiFallback: true,
     },

@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import SearchPlugin from './SearchPlugin.jsx';
+import SearchPlugin from 'components/search/SearchPlugin.jsx';
 
 class ItemsList extends Component {
     constructor(props) {

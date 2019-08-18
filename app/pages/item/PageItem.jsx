@@ -1,11 +1,11 @@
 import {Component} from 'react';
-import ElyaMenu from './components/ElyaMenu.jsx';
-import {ElyaNavbar, ElyaFooter} from './components/ElyaUI.jsx';
-import cssVariables from './vars.scss';
-import Icon from './components/ElyaIcons.jsx';
+import ElyaMenu from 'components/menu/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaFooter} from 'components/ui/ElyaUI.jsx';
+import cssVariables from 'styles/vars.scss';
+import Icon from 'components/icons/ElyaIcons.jsx';
 
 import style from './PageItem.scss';
-import page from './ElyaPage.scss';
+import page from 'styles/ElyaPage.scss';
 
 class ElyaItemFull extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class ElyaItemFull extends Component {
                             <div className={style.wrapperCenter} style={{width: `${oneImgHeight}vh`}}>
                                 <div className={style.wrapperFlex}>
                                     {images.map((img, idx) =>
-                                        <div className={style.imgBox} style={{maxWidth: `${oneImgHeight}vh`}}>
+                                        <div key={idx} className={style.imgBox} style={{maxWidth: `${oneImgHeight}vh`}}>
                                             <img src={img} alt=''/>
                                         </div>
                                     )}
@@ -37,14 +37,14 @@ class ElyaItemFull extends Component {
                 <div className={style.itemInfo + ' col-12 col-lg-4'}>
                     <h1 className={style.name}>{name}</h1>
                     <h1 className={style.price}>{price}</h1>
-                    <p className={style.freeShipping}>
+                    <div className={style.freeShipping}>
                         <p className={style.rightAlign}>Free shipping</p>
-                    </p>
+                    </div>
                     <button className={style.addToCart}>Add to cart</button>
                     <ul className={style.materials}>
                         Materials:
-                        {materials.map((material) =>
-                            <li>{material}</li>
+                        {materials.map((material, idx) =>
+                            <li key={idx}>{material}</li>
                         )}
                     </ul>
                     <hr/>
@@ -73,11 +73,11 @@ class ElyaPageItem extends Component {
     }
     render() {
         const itemID = this.props.match.params.id;
+        const item = catalogItems.find((item) => item.name.toLowerCase() === itemID.toLowerCase());
         return <div className={page.elya}>
             <ElyaNavbar/>
             <ElyaMenu menuItems={menuItems}/>
-            <ElyaItemFull item={catalogItems.filter((item) =>
-                item.name.toLowerCase() === itemID.toLowerCase())[0]}/>
+            <ElyaItemFull item={item}/>
             <ElyaFooter/>
         </div>;
     }

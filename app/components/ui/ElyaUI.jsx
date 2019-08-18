@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import Icon from './ElyaIcons.jsx';
+import Icon from 'components/icons/ElyaIcons.jsx';
 import style from './ElyaUI.scss';
 
 class ElyaNavbar extends Component {

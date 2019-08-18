@@ -1,4 +1,4 @@
-@import "../vars.scss";
+@import "styles/vars.scss";
 
 .elyaNavbar {
   width: 100%;
@@ -16,7 +16,7 @@
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url("../../img/logo.png");
+    background-image: url("/img/logo.png");
     width: $logoHeight * 1.6;
     height: $logoHeight;
     top: ($navbarHeight - $logoHeight)/2;
@@ -67,7 +67,7 @@
     z-index: 1;
   }
   .youtube-preview { // превьюшка над видео
-    background-image: url("../../img/youtube-no-logo.jpg");
+    background-image: url("/img/youtube-no-logo.jpg");
     background-size: cover;
     background-position: center;
     .icon {

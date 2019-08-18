@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import {Motion, spring} from 'react-motion';
 import {Swipeable} from 'react-swipeable';
 import {CSSTransition} from 'react-transition-group';
-import Icon from './ElyaIcons.jsx';
+import Icon from 'components/icons/ElyaIcons.jsx';
 import cx from 'classnames';
 
 import style from './ElyaCatalogItem.scss';

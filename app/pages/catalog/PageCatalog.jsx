@@ -1,10 +1,10 @@
 import {Component} from 'react';
-import ElyaMenu from './components/ElyaMenu.jsx';
-import {ElyaNavbar, ElyaFooter} from './components/ElyaUI.jsx';
-import ElyaCatalogItem from './components/ElyaCatalogItem.jsx';
+import ElyaMenu from 'components/menu/ElyaMenu.jsx';
+import {ElyaNavbar, ElyaFooter} from 'components/ui/ElyaUI.jsx';
+import ElyaCatalogItem from 'components/catalog-item/ElyaCatalogItem.jsx';
 
 import style from './PageCatalog.scss';
-import page from './ElyaPage.scss';
+import page from 'styles/ElyaPage.scss';
 
 class ElyaCatalog extends Component {
     render() {

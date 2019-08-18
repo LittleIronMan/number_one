@@ -2,8 +2,8 @@
 import {Component} from 'react';
 import {Motion, StaggeredMotion, spring} from 'react-motion';
 import {Link} from 'react-router-dom';
-import Icon from './ElyaIcons.jsx';
-import cssVariables from '../vars.scss';
+import Icon from 'components/icons/ElyaIcons.jsx';
+import cssVariables from 'styles/vars.scss';
 import style from './ElyaMenu.scss';
 
 const M_X = parseFloat(cssVariables.menuBtnLeft); // em

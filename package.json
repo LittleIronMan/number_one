@@ -8,6 +8,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "app-module-path": "^2.2.0",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
     "react": "^16.5.0",

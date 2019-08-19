@@ -8,6 +8,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "app-module-path": "^2.2.0",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
     "react": "^16.5.0",
@@ -24,6 +25,9 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.0",
     "css-loader": "^3.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",

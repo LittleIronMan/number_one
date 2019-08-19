@@ -1,12 +1,12 @@
 'use strict';
-import React from "react";
+import {Component} from 'react';
 import {Motion, StaggeredMotion, spring} from 'react-motion';
-import {Link} from "react-router-dom";
-import Icon from "./ElyaIcons.jsx";
-import cssVariables from "../vars.scss";
-import style from "./ElyaMenu.scss";
+import {Link} from 'react-router-dom';
+import Icon from 'components/icons/ElyaIcons.jsx';
+import cssVariables from 'styles/vars.scss';
+import style from './ElyaMenu.scss';
 
-const M_X = parseFloat(cssVariables.menuBtnLeft);//em
+const M_X = parseFloat(cssVariables.menuBtnLeft); // em
 const M_Y = parseFloat(cssVariables.menuBtnTop);
 const MENU_BUTTON_HEIGHT = parseFloat(cssVariables.menuBtnHeight);
 const MENU_ITEM_HEIGHT = parseFloat(cssVariables.menuItemHeight);
@@ -20,21 +20,21 @@ const VISIBLE = true;
 const SPRING_CONFIG = {stiffness: 80, damping: 18};
 
 function getItemStyle(pos, buttonIndex, animated=true) {
-    let x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH : 0);
-    let y = M_Y + MENU_BUTTON_HEIGHT + (MENU_ITEM_HEIGHT * buttonIndex) + 0.5; //em
+    const x = M_X + ((pos === HIDDEN) ? -MENU_ITEM_WIDTH : 0);
+    const y = M_Y + MENU_BUTTON_HEIGHT + (MENU_ITEM_HEIGHT * buttonIndex) + 0.5; // em
     return {
         left: animated ? spring(x, SPRING_CONFIG) : x,
-        top: y
+        top: y,
     };
 }
 
-class ElyaMenu extends React.Component {
+class ElyaMenu extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             firstRender: true,
-            targetPos: HIDDEN
+            targetPos: HIDDEN,
         };
 
         // Привязываем this к функции
@@ -42,17 +42,17 @@ class ElyaMenu extends React.Component {
     }
 
     toggleMenu() {
-        let{targetPos} = this.state;
+        const {targetPos} = this.state;
         this.setState({
             firstRender: false,
-            targetPos: !targetPos
+            targetPos: !targetPos,
         });
     }
 
     renderItems() {
         const {targetPos, firstRender} = this.state;
-        let currentPos = firstRender ? HIDDEN : (!targetPos);
-        let newPos = firstRender ? HIDDEN : targetPos;
+        const currentPos = firstRender ? HIDDEN : (!targetPos);
+        const newPos = firstRender ? HIDDEN : targetPos;
         // Определяем целевые стили для кнопок. Эти стили не анимированные, а фиксированные.
         // Т.е. если меню открыто, то целевым стилем для них будет скрытая позиция за пределами экрана.
         // И наоборот, если меню скрыто, то целевым стилем для них будет видимая позиция в верхней-правой части экрана.
@@ -69,8 +69,8 @@ class ElyaMenu extends React.Component {
         const mostLeftPos = getItemStyle(HIDDEN, 0, false).left;
         const mostRightPos = getItemStyle(VISIBLE, 0, false).left;
 
-        let calculateStylesForNextFrame = prevFrameItemsStyles => {
-            let nextFrameTargetStyles = prevFrameItemsStyles.map((itemStyleInPreviousFrame, i) => {
+        const calculateStylesForNextFrame = (prevFrameItemsStyles) => {
+            const nextFrameTargetStyles = prevFrameItemsStyles.map((itemStyleInPreviousFrame, i) => {
                 // движение для первой кнопки будет включаться сразу после изменения состояния
                 if (i === 0) {
                     return itemsTargetStylesSpring[i];
@@ -91,18 +91,18 @@ class ElyaMenu extends React.Component {
             return nextFrameTargetStyles;
         };
 
-        return(
+        return (
             <StaggeredMotion defaultStyles={itemsTargetStyles} styles={calculateStylesForNextFrame}>
-                {interpolatedStyles =>
+                {(interpolatedStyles) =>
                     <div>
                         {interpolatedStyles.map(({width, height, top, left}, index) => {
-                                const item = this.props.menuItems[index];
-                                return <div className={style.menuItem}
-                                            key={index}
-                                            style={{top: `${top}em`, left: `${left}em`}}>
-                                    <Link to={item.path}>{item.text}</Link>
-                                </div>
-                            }
+                            const item = this.props.menuItems[index];
+                            return <div className={style.menuItem}
+                                key={index}
+                                style={{top: `${top}em`, left: `${left}em`}}>
+                                <Link to={item.path}>{item.text}</Link>
+                            </div>;
+                        }
                         )}
                     </div>
                 }
@@ -111,10 +111,11 @@ class ElyaMenu extends React.Component {
     }
 
     render() {
-        let {targetPos, firstRender} = this.state;
+        const {targetPos, firstRender} = this.state;
         let mainButtonRotation;
-        if (firstRender) { mainButtonRotation = {rotate: 0}}
-        else {
+        if (firstRender) {
+            mainButtonRotation = {rotate: 0};
+        } else {
             mainButtonRotation =
                 targetPos === HIDDEN ?
                     {rotate: spring(0, SPRING_CONFIG)} :
@@ -125,7 +126,7 @@ class ElyaMenu extends React.Component {
                 <Motion style={mainButtonRotation}>
                     {({rotate}) =>
                         <div className={style.menuButton} onClick={this.toggleMenu}
-                             style={{transform: `rotate(${rotate}deg)`}}>
+                            style={{transform: `rotate(${rotate}deg)`}}>
                             <Icon.hamburger className={style.icon}/>
                         </div>
                     }

@@ -10,7 +10,7 @@
   "dependencies": {
     "app-module-path": "^2.2.0",
     "classnames": "^2.2.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-motion": "^0.5.2",
